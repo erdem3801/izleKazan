@@ -9,12 +9,12 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail;
+	public $fromEmail = "burkaerdem@gmail.com";
 
 	/**
 	 * @var string
 	 */
-	public $fromName;
+	public $fromName = "Time Of Wood";
 
 	/**
 	 * @var string
@@ -47,14 +47,14 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost = "ssl://smtp.googlemail.com";
+	public $SMTPHost = "smtp.gmail.com";
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser ="burkaerdem@gmail.com";
+	public $SMTPUser = "burkaerdem@gmail.com";
 
 	/**
 	 * SMTP Password
@@ -68,28 +68,28 @@ class Email extends BaseConfig
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 465;
+	public $SMTPPort = 587;
 
 	/**
 	 * SMTP Timeout (in seconds)
 	 *
 	 * @var integer
 	 */
-	public $SMTPTimeout = 60;
+	public $SMTPTimeout = 600;
 
 	/**
 	 * Enable persistent SMTP connections
 	 *
 	 * @var boolean
 	 */
-	public $SMTPKeepAlive = false;
+	public $SMTPKeepAlive = true;
 
 	/**
 	 * SMTP Encryption. Either tls or ssl
 	 *
 	 * @var string
 	 */
-	public $SMTPCrypto = 'ssl';
+	public $SMTPCrypto = "ssl";
 
 	/**
 	 * Enable word-wrap

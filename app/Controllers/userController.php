@@ -66,25 +66,16 @@ class userController extends BaseController
     {
         $email = \Config\Services::email();
 
-        $config['protocol'] = 'smtp';
-        $config['mailPath'] = '/usr/sbin/sendmail';
-        $config['charset']  = 'iso-8859-1';
-        $config['wordWrap'] = true;
-        $config['newline'] = "\r\n";
-        
-        $email->initialize($config);
+        $email->setTo('aksiyonyatirim@gmail.com');
 
-        $email->setFrom('burkaerdem@gmail.com', 'burkay erdem');
-        $email->setTo("illegal_3801@hotmail.com");
-
-        $email->setSubject('deneme');
+        $email->setSubject('Time Of Wood');
         $email->setMessage("deneme");
-
+ 
         if ($email->send()) {
             echo $this->request->getGet('email') . 'adresine mesaj gönderildi mailinizi kontrol edin';
         } else {
             $data = $email->printDebugger(['headers']);
-            print_r($data);
+            print_r($data); 
             
         }
         # code...
