@@ -14,7 +14,7 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromName = "Time Of Wood";
+	public $fromName = "burkay erdem";
 
 	/**
 	 * @var string
@@ -33,7 +33,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $protocol = "smtp";
+	public $protocol = 'smtp';
 
 	/**
 	 * The server path to Sendmail.
@@ -54,7 +54,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPUser = "burkaerdem@gmail.com";
+	public $SMTPUser ="burkaerdem@gmail.com";
 
 	/**
 	 * SMTP Password
@@ -68,28 +68,28 @@ class Email extends BaseConfig
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 587;
+	public $SMTPPort = 465;
 
 	/**
 	 * SMTP Timeout (in seconds)
 	 *
 	 * @var integer
 	 */
-	public $SMTPTimeout = 600;
+	public $SMTPTimeout = 15;
 
 	/**
 	 * Enable persistent SMTP connections
 	 *
 	 * @var boolean
 	 */
-	public $SMTPKeepAlive = true;
+	public $SMTPKeepAlive = false;
 
 	/**
 	 * SMTP Encryption. Either tls or ssl
 	 *
 	 * @var string
 	 */
-	public $SMTPCrypto = "ssl";
+	public $SMTPCrypto = 'ssl';
 
 	/**
 	 * Enable word-wrap
@@ -117,7 +117,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $charset = 'UTF-8';
+	public $charset = 'iso-8859-1';
 
 	/**
 	 * Whether to validate the email address

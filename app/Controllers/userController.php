@@ -3,6 +3,10 @@
 namespace App\Controllers;
 
 use CodeIgniter\HTTP\Message;
+use App\Models\userModel;
+use CodeIgniter\Cookie\Cookie;
+use DateTime;
+use DateTimeZone;
 
 class userController extends BaseController
 {
@@ -13,7 +17,7 @@ class userController extends BaseController
     public function __construct()
     {
         $this->viewFolder = "userView";
-        $this->subModel  = model('userModel');
+        $this->subModel  = new userModel();
     }
     public function singin()
     {
@@ -40,6 +44,7 @@ class userController extends BaseController
     public function singup()
     {
         parse_str($this->request->getPost('data'), $data);
+
         if ($this->request->getMethod() == "post") {
             $queryData = [
                 'userName' => $data['firstName'] . $data['lastName'] . rand(0, 100),
@@ -50,12 +55,21 @@ class userController extends BaseController
                 'IBAN' => '0',
             ];
 
-            $this->subModel->insert($queryData);
+            if ($this->subModel->insert($queryData) !== false) {
 
-            return $this->response->setJSON([
-                'id' => $this->subModel->getInsertID(),
-                'email' => $data['eMail']
-            ]);
+                return $this->response->setJSON([
+                    'status' => 'success',
+                    'data' => [
+                        'id' => $this->subModel->getInsertID(),
+                        'email' => $data['eMail']
+                    ]
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'data' => $this->subModel->errors()
+                ]);
+            }
         }
 
         $view = __FUNCTION__;
@@ -66,18 +80,35 @@ class userController extends BaseController
     {
         $email = \Config\Services::email();
 
-        $email->setTo('aksiyonyatirim@gmail.com');
+        $email->setTo($this->request->getGet('email'));
 
-        $email->setSubject('Time Of Wood');
-        $email->setMessage("deneme");
- 
-        if ($email->send()) {
-            echo $this->request->getGet('email') . 'adresine mesaj gönderildi mailinizi kontrol edin';
-        } else {
-            $data = $email->printDebugger(['headers']);
-            print_r($data); 
-            
-        }
+        $email->setSubject('izleKazan');
+        $email->setMessage(base_url('user/Auth?token=' . $this->request->getGet('id')));
+        session()->setFlashData('email',$this->request->getGet('email'));
+        session()->setFlashData('id',$this->request->getGet('id'));
+        // if ($email->send()) {
+        return redirect()->to(base_url('user/mailSended'));
+        // } else {
+        //     $data = $email->printDebugger(['headers']);
+        //     print_r($data); 
+
+        // }
+        # code...
+    }
+    public function mailSended()
+    {
+        helper('cookie');
+        $viewData = [];
+        $email = session()->getFlashData('email');
+        $id = session()->getFlashData('id');
+        if(!$id && !$email)
+            return redirect()->to(base_url('user/singin'));
+        $viewData['email'] = $email;
+        $viewData['id'] = $id;
+        
+
+        $view = __FUNCTION__;
+        return view("{$this->viewFolder}/{$view}View", $viewData);
         # code...
     }
     public function profile()

@@ -49,16 +49,17 @@ class User extends Migration
 				'constraint' => '15', 
 
 			],
-			
-
+			 
 			'password' => [
 				'type' => 'VARCHAR',
 				'constraint' => '100',
 			],
-			'IBAN' => [
-				'type' => 'TEXT',
-				'null' => true,
+			'isActive' => [
+				'type' => 'tinyint',
+				'default' => 0,
 			],
+			
+
 		]);
 		$this->forge->addKey('ID', true);
 		$this->forge->createTable('usertable');
