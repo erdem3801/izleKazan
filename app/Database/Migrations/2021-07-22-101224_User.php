@@ -15,6 +15,12 @@ class User extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true,
 			],
+			'googleId'          => [
+				'type'           => 'VARCHAR',
+				'constraint'     => 250,
+				'unique' 	 	 => true
+
+			],
 			'userName'       => [
 				'type'       => 'VARCHAR',
 				'constraint' => '100',
@@ -36,20 +42,20 @@ class User extends Migration
 			],
 			'phone'       => [
 				'type'       => 'VARCHAR',
-				'constraint' => '15', 
+				'constraint' => '15',
 
 			],
 			'location'       => [
 				'type'       => 'VARCHAR',
-				'constraint' => '50', 
+				'constraint' => '50',
 
 			],
 			'birthDay'       => [
 				'type'       => 'VARCHAR',
-				'constraint' => '15', 
+				'constraint' => '15',
 
 			],
-			 
+
 			'password' => [
 				'type' => 'VARCHAR',
 				'constraint' => '100',
@@ -58,7 +64,7 @@ class User extends Migration
 				'type' => 'tinyint',
 				'default' => 0,
 			],
-			
+
 
 		]);
 		$this->forge->addKey('ID', true);

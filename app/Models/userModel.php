@@ -15,6 +15,7 @@ class userModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
+        'googleId',
         'userName', 
         'firstName',
         'lastName',
