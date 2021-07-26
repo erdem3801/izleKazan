@@ -3,7 +3,7 @@
 namespace App\Libraries;
 
 use CodeIgniter\Files\Exceptions\FileNotFoundException;
-use \Firebase\JWT\JWT;
+use Firebase\JWT\JWT;
 class userToken
 {
 
@@ -48,6 +48,7 @@ class userToken
         );
 
         $jwt = JWT::encode($payload, $this->privateKey(), 'HS256');
+        session()->set('userData',$userData);
         session()->set('token', $jwt);
     }
     public function checkJWT()

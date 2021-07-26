@@ -46,7 +46,7 @@
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                            <input class="form-control" name="eMail" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="<?= $userData['eMail']  ?>">
+                            <input class="form-control"  id="inputEmailAddress" type="email" placeholder="Enter your email address" value="<?= $userData['eMail']  ?>" disabled>
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">

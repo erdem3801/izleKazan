@@ -27,6 +27,9 @@ $paths = new Config\Paths();
 $bootstrap = rtrim($paths->systemDirectory, '\\/ ') . DIRECTORY_SEPARATOR . 'bootstrap.php';
 $app       = require realpath($bootstrap) ?: $bootstrap;
 
+//GOOGLE LİBRARİES
+require_once APPPATH."ThirdParty/vendor/autoload.php";
+
 /*
  *---------------------------------------------------------------
  * LAUNCH THE APPLICATION
