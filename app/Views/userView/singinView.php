@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('public')  ?>/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('public')  ?>/css/sb-admin-2.min.css" rel="stylesheet">
@@ -45,12 +43,10 @@
                                     <form method="POST" class="user">
                                         <small><?= session()->getFlashdata('error');  ?></small>
                                         <div class="form-group">
-                                            <input type="email" name="eMail" class="form-control form-control-user"
-                                                placeholder="eMail">
+                                            <input type="email" name="eMail" class="form-control form-control-user" placeholder="eMail">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -64,14 +60,16 @@
                                         </button>
 
                                         <hr>
-                                        <?php if(isset($googleHref)) :  ?>
-                                        <a href="<?= $googleHref  ?>" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
+                                        <?php if (isset($googleHref)) :  ?>
+                                            <a href="<?= $googleHref  ?>" class="btn btn-google btn-user btn-block">
+                                                <i class="fab fa-google fa-fw"></i> Login with Google
+                                            </a>
                                         <?php endif;  ?>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+
+                                  
+                                        <button scope="public_profile,email" onlogin="checkLoginState();" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+                                        </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
@@ -102,6 +100,51 @@
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('public')  ?>/js/sb-admin-2.min.js"></script>
 
+
+
+    <script>
+        function statusChangeCallback(response) { // Called with the results from FB.getLoginStatus().
+            console.log('statusChangeCallback');
+            console.log(response); // The current login status of the person.
+            if (response.status === 'connected') { // Logged into your webpage and Facebook.
+                testAPI();
+            } else { // Not logged into your webpage or we are unable to tell.
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this webpage.';
+            }
+        }
+
+
+        function checkLoginState() { // Called when a person is finished with the Login Button.
+            FB.getLoginStatus(function(response) { // See the onlogin handler
+                statusChangeCallback(response);
+            });
+        }
+
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '{app-id}',
+                cookie: true, // Enable cookies to allow the server to access the session.
+                xfbml: true, // Parse social plugins on this webpage.
+                version: '{api-version}' // Use this Graph API version for this call.
+            });
+
+
+            FB.getLoginStatus(function(response) { // Called after the JS SDK has been initialized.
+                statusChangeCallback(response); // Returns the login status.
+            });
+        };
+
+        function testAPI() { // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+            });
+        }
+    </script>
 </body>
 
 </html>

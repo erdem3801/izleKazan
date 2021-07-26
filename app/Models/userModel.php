@@ -26,8 +26,6 @@ class userModel extends Model
         'password',  
         'isActive'
     ];
- 
-
     protected $validationRules    = [ 
         'eMail'        => 'required|valid_email|is_unique[usertable.eMail]',
         'password'     => 'required|min_length[5]', 
@@ -42,8 +40,6 @@ class userModel extends Model
             'required' => 'Şifre alanını Boş bırakmayın',
             'min_length' => 'Şifre 5 karakterden fazla olmalı'
         ]
-       
-
     ];
     protected $skipValidation     = false;
 }

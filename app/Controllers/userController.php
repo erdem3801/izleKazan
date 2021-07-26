@@ -40,7 +40,6 @@ class userController extends BaseController
                  
                  $google_client->setAccessToken($token['access_token']);
                  session()->set('access_token',$token['access_token']);
-
                  $google_service = new \Google_Service_Oauth2($google_client);
                  $googleData = $google_service->userinfo->get();
           
@@ -54,12 +53,12 @@ class userController extends BaseController
                 }
                 else{
                     $queryData = [
-                        'googleId' => $googleData['id'],
-                        'userName' => $googleData['givenName'] . $googleData['familyName'] . rand(0, 100),
-                        'firstName' => $googleData['givenName'],
-                        'lastName' => $googleData['familyName'],
+                        'googleId' => $googleData['id'] == null ? '' : $googleData['id'] ,
+                        'userName' => $googleData['givenName']== null ? '' : $googleData['givenName'] . $googleData['familyName'] ?? $googleData['familyName']. rand(0, 100),
+                        'firstName' => $googleData['givenName'] == null ? '': $googleData['givenName'],
+                        'lastName' => $googleData['familyName'] == null ? '': $googleData['familyName'],
                         'eMail'     => 'google-'.$googleData['email'],
-                        'password'  => $googleData['id'],
+                        'password'  => $googleData['id'] == null ? '' : $googleData['id'],
                     ];
                     $this->subModel->insert($queryData);
                     return redirect()->to(base_url());
@@ -70,6 +69,9 @@ class userController extends BaseController
          }
          #endregion;
 
+         #region facebookAuth
+         
+         #endregion;
          if(!session()->get('access_token')){
              $viewData['googleHref'] = $google_client->createAuthUrl();
          }
