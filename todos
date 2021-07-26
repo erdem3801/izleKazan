@@ -1,1 +1,91 @@
-login sayfası yapıldı mail auth işelemi yapılacak
+
+<!-- Video advert 
+Youtube linki
+
+Video ile reklam veriyorum 
+20 sanıye geçtikten sonra bir buton gelicek bu butona tıklayarak siteye gidecek 
+video verenden istenene parametreler 
+video sonrası çıkıcak butonun adı 
+Anasayafada çıkabılıyor
+video sonrası yönlendrilecek sitenin urlsi
+
+Youtube izlenmelerine ihtiyacım var 
+videolar sadece uzantıda çıkıyor 
+Videoyu uzantıya ekleyerek youtube uzerinden saydırıyor
+
+
+----------------------------------------------------------
+Multi size advert
+
+reklam verenden istenicek parametreler
+Afiş fotosu
+Yönlendirme site urlsi 
+Başlık 
+Açıklama
+Parametrelerin nasıl göründüğü ile ilgili seçebileceği dikey yatay gösterimler
+Reklşam gösteirm seçenekleri
+1-) 1000 gösterim başına fiyat girişi
+2-) 1000 gösterim başına tıklama başına ödeme fiyat girişi
+
+trafik kaynakları ek olarak anlaşmalı web sitreleri
+seçili reklam grubu ile ilgili reklam verilecek sitelerin profilleri belirlebnebilir
+reklam gösterimdeyken kalan gösterim limiti ayarı yapılabilir
+reklam izleyen kişi gösterimdeyken başka seçmeye geçtiğinde reklam süresi dursun
+
+-----------------------------------------
+POPUP REKLAM
+Kullanıcdan istenilecek parametreler 
+Href site urlsi 
+trafik seçme
+kullanıcıya soru sorma 
+urlyi gizleme izlekazan.com -> bilinmeyen.com
+ziyaretçinin sitede durması gereken zamanı seçme
+kullanıcı başına kaç gösterim yapılabileceğini seçme
+dakikada hedeflenen ziyaretçi
+
+--------------------------------------------------
+AFİŞ BANNER REKLAM REKLAMI
+kullanıcıdan istenilecek parametreler 
+afişin yönlendiriledceği site urlsi
+banner boyut girişi
+gösterim başına + tıklama başına fiyat seçenekleri
+gösterim yerleri
+trafik kaynakları ek olarak anlaşmalı web sitreleri
+seçili reklam grubu ile ilgili reklam verilecek sitelerin profilleri belirlebnebilir
+reklam gösterimdeyken kalan gösterim limiti ayarı yapılabilir
+reklam izleyen kişi gösterimdeyken başka seçmeye geçtiğinde reklam süresi dursun
+ -->
+
+
+<!--FİYAT LİSTESİ
+
+Video İzleme
+---------
+20 saniye için 0,000364$ 
+1000 kişiye izletilecek olduğundan 1000 izleyicinin kazanacağı para 0,364$ siteye kalıcak olan para 0,636$ 
+Her 5 saniye uzayan videolar için izleyenlerin kaznaacağı para 0,0000546$
+VİDEO EKLEME
+-------
+ 1000 görüntüleme 1 abd doları 0,20 saniye 
+Her 5 saniye artık 15 cent
+20 sanıye sonra bi soru çıkart bilene para ver 10 cent
+----------------
+Multi size advert
+reklam veren 1000 gösterim başına maliyeti max 0,501$
+tıklama başına max girebileceği değer 0,1 $ 
+-----------
+POP UP 
+-------
+reklam verene
+kayagı gizle $0,1
+bilemce sor 0,1$
+1000 gösterim 2,25$ sabit fiyat
+3 sanite 1$
+10 saniye 1,30 $
+30 saniye 1,60 $
+60 saniye 2,25 $
+---------------------
+AFİŞ
+----
+eklam veren 1000 gösterim başına maliyeti max 0,501$
+tıklama başına max girebileceği değer 0,1 $ -->
