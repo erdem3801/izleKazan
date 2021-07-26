@@ -15,27 +15,27 @@
     <li class="nav-item active">
         <a class="nav-link" href="<?= base_url("{$locale}/controlCenter")  ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Control Center</span></a>
+            <span> <?= lang("sidebar.menu1")  ?></span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Interface
+    <?= lang("sidebar.menuKesici")  ?>
     </div>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#advertsUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-rocket"></i>
-            <span>Adverts</span>
+            <span><?= lang("sidebar.dropDownReklam")  ?></span>
         </a>
         <div id="advertsUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Adverts Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">My ads</a>
-                <a class="collapse-item" href="utilities-border.html">Add advert</a>
-                <a class="collapse-item" href="utilities-animation.html">Budget</a>
+                <h6 class="collapse-header"><?= lang("sidebar.menuReklamKesici")  ?>:</h6>
+                <a class="collapse-item" href="utilities-color.html"><?= lang("sidebar.menuReklam1")  ?></a>
+                <a class="collapse-item" href="utilities-border.html"><?= lang("sidebar.menuReklam2")  ?></a>
+                <a class="collapse-item" href="utilities-animation.html"><?= lang("sidebar.menuReklam3")  ?></a>
             </div>
         </div>
     </li>
@@ -43,15 +43,15 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#referralsUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-user-friends"></i>
-            <span>Referrals</span>
+            <span><?= lang("sidebar.dropDownReferanslar")  ?></span>
         </a>
         <div id="referralsUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Referrals Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Statistic</a>
-                <a class="collapse-item" href="utilities-border.html">Structure</a>
-                <a class="collapse-item" href="utilities-animation.html">Promo Banners</a>
-                <a class="collapse-item" href="utilities-other.html">UTM tags</a>
+                <h6 class="collapse-header"><?= lang("sidebar.referansKesici ")  ?>:</h6>
+                <a class="collapse-item" href="utilities-color.html"><?= lang("sidebar.menuRefrans1")  ?></a>
+                <a class="collapse-item" href="utilities-border.html"><?= lang("sidebar.menuReferans2")  ?></a>
+                <a class="collapse-item" href="utilities-animation.html"><?= lang("sidebar.menuReferans3")  ?></a>
+                <a class="collapse-item" href="utilities-other.html"><?= lang("sidebar.menuReferans4")  ?></a>
             </div>
         </div>
     </li>
@@ -63,10 +63,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">User Utilities:</h6>
+                <h6 class="collapse-header"><?= lang("sidebar.kullanıcıKesici ")  ?>:</h6>
 
-                <a class="collapse-item" href="<?= base_url("{$locale}/user/profile")  ?>">Settings</a>
-                <a class="collapse-item" href="#">Withdrawal History</a>
+                <a class="collapse-item" href="<?= base_url("{$locale}/user/profile")  ?>"><?= lang("sidebar.userMenu1 ")  ?></a>
+                <a class="collapse-item" href="#"><?= lang("sidebar.userMenu2 ")  ?></a>
             </div>
         </div>
     </li>
@@ -74,14 +74,14 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#helpUtilities" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Help</span>
+            <span>   <?= lang("sidebar.dropDownHelp ")  ?></span>
         </a>
         <div id="helpUtilities" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Help Utilities:</h6>
+                <h6 class="collapse-header"><?= lang("sidebar.yardımKesici ")  ?>:</h6>
 
-                <a class="collapse-item" href="#">FAQ</a>
-                <a class="collapse-item" href="#">Support</a>
+                <a class="collapse-item" href="#"><?= lang("sidebar.helpMenu1 ")  ?></a>
+                <a class="collapse-item" href="#"><?= lang("sidebar.helpMenu2 ")  ?></a>
             </div>
         </div>
     </li>
