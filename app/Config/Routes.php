@@ -31,18 +31,30 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/', 'Home::index', ['filter' => 'Auth']);
 
-$routes->group('{locale}', function ($routes) {
-	$routes->get('/', 'Home::index', ['filter' => 'Auth']);
-	$routes->group('home', ['filter' => 'Auth'], function ($routes) {
-		$routes->get('(:segment)', 'Home::$1');
+
+$routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
+	
+	$routes->get('/', 'Home::index');
+
+	$routes->group('home' , function ($routes) {
+		$routes->match(['get', 'post'],'(:segment)', 'Home::$1');
 	});
+	
 	$routes->group('user', function ($routes) {
-		$routes->match(['get', 'post'], '(:segment)', 'userController::$1');
+		$routes->match(['get', 'post'], 'profile', 'userController::profile');
+	});
+	$routes->group('controlCenter', function ($routes) {
+		$routes->match(['get', 'post'], '/', 'controlCenterController::advertiser');
+		$routes->match(['get', 'post'], '(:segment)', 'controlCenterController::$1');
 	});
 });
 
-
+ 
+$routes->group('user', function ($routes) {
+	$routes->match(['get', 'post'], '(:segment)', 'userController::$1');
+});
 
 /*
  * --------------------------------------------------------------------

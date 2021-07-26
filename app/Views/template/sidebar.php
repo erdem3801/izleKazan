@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?= base_url("{$locale}/controlCenter")  ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Control Center</span></a>
     </li>

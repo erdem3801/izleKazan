@@ -45,10 +45,10 @@
                                     </div>
                                    
                                      
-                                        <a href="<?= base_url("{$locale}/user/emailAuth?email={$email}&id={$id}")  ?>" class="btn btn-primary btn-user btn-block">
+                                        <a href="<?= base_url("user/emailAuth?email={$email}&id={$id}")  ?>" class="btn btn-primary btn-user btn-block">
                                             Resend Email
                                         </a>
-                                        <a href="<?= base_url("{$locale}/user/singin")  ?>" class="btn btn-primary btn-user btn-block">
+                                        <a href="<?= base_url("user/singin")  ?>" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                  

@@ -101,7 +101,7 @@ class userController extends BaseController
         $locale = $this->request->getLocale();
 
         session()->destroy();
-        return redirect()->to(base_url("{$locale}/user/singin"));
+        return redirect()->to(base_url("user/singin"));
         # code...
     }
     public function singup()
@@ -156,7 +156,7 @@ class userController extends BaseController
         session()->setFlashData('email', $this->request->getGet('email'));
         session()->setFlashData('id', $this->request->getGet('id'));
         if ($email->send()) {
-            return redirect()->to(base_url("{$locale}/user/mailSended"));
+            return redirect()->to(base_url("user/mailSended"));
         } else {
             $data = $email->printDebugger(['headers']);
             print_r($data);
@@ -207,7 +207,8 @@ class userController extends BaseController
         }
         $viewData['userData'] = $userData;
         #endregion;
-
+       
+   
 
         return view("{$this->viewFolder}/{$view}View", $viewData);
         # code...

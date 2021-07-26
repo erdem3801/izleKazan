@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Site adı - İzle kazan</title>
+    <title><?= lang('sidebar.title')  ?></title>
 
     <?= $this->include('template/css')  ?>
     

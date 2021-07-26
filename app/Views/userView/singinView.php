@@ -76,7 +76,7 @@
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="<?= base_url("{$locale}/user/singup")  ?>">Create an Account!</a>
+                                        <a class="small" href="<?= base_url("user/singup")  ?>">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>

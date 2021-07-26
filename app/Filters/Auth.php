@@ -10,7 +10,9 @@ class Auth implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
+
         $token  = new userToken();
+       
         $isAuth = $token->checkJWT($token); 
         if(!$isAuth)
             return redirect()->to(base_url('user/singin'));
