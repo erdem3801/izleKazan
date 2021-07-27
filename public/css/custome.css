@@ -61,3 +61,71 @@ a:hover {
     text-decoration: none;
     color: inherit;
 }
+
+.Rating-Text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #3D3D3D;
+    margin-bottom: 6px;
+}
+
+.StatProgress--3X5OQ {
+    margin-top: 17px;
+    height: 5px;
+    position: relative;
+    background: #ECF2F9;
+    border-radius: 24px;
+}
+
+.StatProgress_blue {
+    color: #3F8EFA;
+}
+.StatProgress_green {
+    color: #5FCD53;
+}
+.StatProgress__Line--1azwu {
+    height: 100%;
+    border-radius: 24px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+.StatProgress__Current--3xbx8 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: currentColor;
+    background: #FFFFFF;
+    border: 2px solid currentColor;
+    border-radius: 24px;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 0;
+    padding: 3px 8px;
+    text-align: center;
+    white-space: nowrap;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.Details {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #737E90;
+    margin-top: 4px;
+    margin-bottom: auto;
+}
+
+.icon-transation img {
+    filter: saturate(0) brightness(1.35);
+    transition: filter 0.3s ease;
+}
