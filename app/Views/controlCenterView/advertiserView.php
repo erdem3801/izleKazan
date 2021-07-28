@@ -155,13 +155,128 @@
                     </div>
                 </div>
 
-                <div class="row mt-4">
+                <div class="row mt-5">
                     <div class="d-flex justify-content-start aling-self-center">
                         <p class="text-center font-weight-bold m-2">USER ACCOUNT</p>
                         <button class="btn btn-outline-info btn-xs"><i class="fas fa-info-circle "></i>How to earn?</i></button>
                     </div>
-                    <div class="d-flex justify-content-center mt-4">
+                </div>
+                <div class="row d-flex justify-content-between align-items-center mt-4">
 
+                    <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                        <h5 class="user-bal text-center m-2">$1.00000002</h5>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-6 text-center mt-4">
+                        <a href="#" class="btn btn-outline-info btn-sm border-0"><i class="fas fa-wallet"></i> widthdraw funds</a>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-6 text-center mt-4">
+                        <a href="#" class="btn btn-outline-info btn-sm border-0"><i class="fas fa-wallet"></i> Withdrawal history</a>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                        <div class="balance">
+                            <div class="my-balance_information__item-title">
+                                Total income:
+                            </div>
+                            <div id="total-income" class="my-balance_information__item-amount" data-val="0.0014665">
+                                $0.0014665 </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                        <div class="balance">
+                            <div class="my-balance_information__item-title">
+                                Daily income:
+                            </div>
+                            <div id="total-income" class="my-balance_information__item-amount" data-val="0.0014665">
+                                $0.0014665
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
+                        <div class="balance">
+                            <div class="my-balance_information__item-title">
+                                Active referrals:
+                            </div>
+                            <div id="total-income" class="my-balance_information__item-amount" data-val="0.0014665">
+                                $0.0014665
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <div class="typical-block_title">
+                            Personal income
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="myAreaChart" style="display: block; height: 120px; width: 424px;" width="530" height="150" class="chartjs-render-monitor"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="typical-block_title">
+                            How to earn more
+
+                            <div class="typical-block_main total-income">
+
+
+                                <div class="total-income_chart" style="text-align: -webkit-center;">
+                                    <div class="total-income_chart__disable">
+                                        <div class="total-income_chart__disable-ico text-center">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <p class="text-center mt-3">
+                                            Invite other people to&nbsp;earn or&nbsp;advertise in&nbsp;Surfe.be and get paid for it. </p>
+                                        <a href="/referral" class="blue-btn" data-ajaxe="true">
+                                            Referral links </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="task-performer task-542413">
+                                    <div class="task-performer_cover">
+                                        <img src="https://i.ytimg.com/vi/vXz5c2pRfNs/hqdefault.jpg" alt="img">
+                                        <a href="/view-video/542413" target="_blank" data-ajaxe="false" class="task-performer_play">
+                                            <i class="fas fa-play " style="color: white;"></i>
+                                        </a>
+                                    </div>
+                                    <div class="watch-video-info row d-flex justify-content-between px-3">
+                                        <div class="watch d-flex">
+                                            <i class="fab fa-youtube"></i>
+                                            <p>Watch video </p>
+                                        </div>
+                                        <div class="time d-flex">
+                                            <i class="far fa-clock"></i>
+                                            <p>20&nbsp;sec. </p>
+                                        </div>
+                                    </div>
+                                    <div class="watch-video-price row d-flex justify-content-between mt-3 px-5">
+                                        <div class="task-performer_price">
+                                            +$&nbsp;0.000357 </div>
+                                        <a href="/view-video/542413" target="_blank" data-ajaxe="false" class="task-performer_btn">
+                                            Start </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

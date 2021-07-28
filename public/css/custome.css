@@ -1,7 +1,11 @@
-
-  .typical-block {
+.bg-gradient-primary {
+    background-color: #73798c;
+    background-image: linear-gradient(180deg, #040710 10%, #220a50 100%);
+    background-size: cover;
+}
+.typical-block {
     width: 100%;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 8px;
     border: 1px solid #e4e6e9;
 }
@@ -11,7 +15,7 @@
 }
 .typical-block_main {
     padding: 24px;
-    border-top: 1px solid #EFF0F2;
+    border-top: 1px solid #eff0f2;
     border-radius: 0 0 8px 8px;
 }
 .payout-history_ico {
@@ -31,11 +35,11 @@
     margin: 0 auto 22px;
 }
 .blue-btn {
-    background: #3F8EFA;
+    background: #3f8efa;
     border-radius: 8px;
     font-size: 14px;
     line-height: 16px;
-    color: #FFFFFF;
+    color: #ffffff;
     width: fit-content;
     padding: 0 40px;
     cursor: pointer;
@@ -70,7 +74,7 @@ a:hover {
     line-height: 19px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #3D3D3D;
+    color: #3d3d3d;
     margin-bottom: 6px;
 }
 
@@ -78,15 +82,15 @@ a:hover {
     margin-top: 17px;
     height: 5px;
     position: relative;
-    background: #ECF2F9;
+    background: #ecf2f9;
     border-radius: 24px;
 }
 
 .StatProgress_blue {
-    color: #3F8EFA;
+    color: #3f8efa;
 }
 .StatProgress_green {
-    color: #5FCD53;
+    color: #5fcd53;
 }
 .StatProgress__Line--1azwu {
     height: 100%;
@@ -100,7 +104,7 @@ a:hover {
     line-height: 16px;
     text-transform: uppercase;
     color: currentColor;
-    background: #FFFFFF;
+    background: #ffffff;
     border: 2px solid currentColor;
     border-radius: 24px;
     position: absolute;
@@ -120,7 +124,7 @@ a:hover {
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
-    color: #737E90;
+    color: #737e90;
     margin-top: 4px;
     margin-bottom: auto;
 }
@@ -128,4 +132,105 @@ a:hover {
 .icon-transation img {
     filter: saturate(0) brightness(1.35);
     transition: filter 0.3s ease;
+}
+.my-balance_information__item-title {
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #424954;
+    text-align: center;
+}
+.my-balance_information__item-amount {
+    margin-right: 3px;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #3d3d3d;
+}
+.typical-block_title {
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #3D3D3D;
+    margin-right: auto;
+}
+
+
+
+
+.task-performer {
+    background: #FFFFFF;
+    border-radius: 8px; 
+    padding: 10px 12px 24px 12px;
+    position: relative;
+    margin-bottom: 24px;
+    border: 1px solid #e4e6e9;
+}
+
+.task-performer_cover {
+    position: relative;
+    background: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.task-performer_play {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #3B83E5;
+    box-shadow: 0px 24px 48px -12px #3B83E5;
+    border-radius: 13px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.task-performer_play i {
+    margin-left: 2px;
+    align-self: center;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.task-performer_info {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.task-performer_type {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+}
+
+.watch-video-info .watch p{
+    font-size: 12px;
+    line-height: 16px;
+    color: #828C9C;
+}
+.watch-video-info p{
+    margin: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: #3D3D3D;
 }
