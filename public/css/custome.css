@@ -61,9 +61,70 @@ a:hover {
     text-decoration: none;
     color: inherit;
 }
-.dikey{
-    margin-left:20%;
+.addverts{
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 25px 25px 20px 25px;
+    margin-bottom: 24px;
+    transition: 0.3s;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    border: 1px solid #e4e6e9;
 }
-.yatay {
-    margin-top: 15%;
+.addverts-ico{
+    width: 177px;
+    min-width: 177px;
+    height: 225px;
+    margin-right: 32px;
+    background: #ecf1f9;
+    border-radius: 8px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textler{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+
+}
+.textler-about{
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 22px;
+    color: #424954;
+    font-weight: 400;
+
+}
+.texler-info{
+    margin-top: auto;
+
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+li{
+    margin: 0;
+    padding: 0;
+}
+.rows {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 24px;
 }
