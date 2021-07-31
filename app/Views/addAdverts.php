@@ -118,7 +118,7 @@
                                     <div class="icerik">
                                         People going be transferred to the site with a&nbsp;guaranteed time of stay on&nbsp;the page. Live traffic source is the browser extension and the&nbsp;mobile application.
                                     </div>
-<br>
+                                    <br>
                                     <ul>
                                         <li>
                                             <span>
@@ -139,7 +139,9 @@
                 <div class=" col-xl-6 col-sm-12 border addverts "> <a href="">
                         <div class="row">
                             <div class="col ">
-                                <i class=" fa-5x  fa fa-picture addadverts-ico " style="padding-left:28%; padding-right:5%; padding-top:40%;"></i>
+                                <svg width="54" height="49" viewBox="0 0 54 49" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.8215 48.0533L7.87483 48H51.0215C52.4787 47.9884 53.6567 46.8092 53.6668 45.352V2.648C53.6668 1.18667 52.4828 0 51.0215 0H2.97883C1.52166 0.0116224 0.34365 1.19081 0.333496 2.648V45.352C0.333496 46.8134 1.51742 47.9985 2.97883 48H7.7655L7.8215 48.0533ZM48.3335 5.33333V32L32.3335 16L5.66683 42.6667V5.33333H48.3335ZM48.3335 39.5413L32.3335 23.5413L13.2082 42.6667H48.3335V39.5413ZM11.0002 16C11.0002 18.9455 13.388 21.3333 16.3335 21.3333C19.279 21.3333 21.6668 18.9455 21.6668 16C21.6668 13.0545 19.279 10.6667 16.3335 10.6667C13.388 10.6667 11.0002 13.0545 11.0002 16Z"></path>
+                                </svg>
                             </div>
                             <div class="col col-sm-6 textler ">
                                 <div class="textler-about">
@@ -148,7 +150,7 @@
                                     <div class="icerik">
                                         Upload graphic banners in standard sizes. They will be shown in the Surfe.pro advertising network, as well as to users who have installed the browser extension.
                                     </div>
-<br>
+                                    <br>
                                     <ul>
                                         <li>
                                             <span>
