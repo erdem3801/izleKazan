@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class multiSizeModel extends Model
+class popUpModel extends Model
 {
-    protected $table      = 'multiSizeTable';
+    protected $table      = 'popUpTable';
     protected $primaryKey = 'ID';
 
     protected $useAutoIncrement = true;
@@ -15,15 +15,13 @@ class multiSizeModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'multiSizeImg',
-        'multiSizeTittle',
-        'multiSizeUrl',
-        'multiSizeText',
-        'multiSizePos',
-        'multiSizeHit',
-        'multiSizeHitMoney',
-        'multiSizeMoney'
-        
+        'popUpUrl',
+        'popUpUrlVisible',
+        'popUpHitMoney',
+        'popUpMoney',
+        'popUpCaptcha',
+        'popUpTime'
+
 
     ];
     protected $validationRules    = [];

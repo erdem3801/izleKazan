@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class multiSizeModel extends Model
+class bannerModel extends Model
 {
-    protected $table      = 'multiSizeTable';
+    protected $table      = 'bannerTable';
     protected $primaryKey = 'ID';
 
     protected $useAutoIncrement = true;
@@ -15,15 +15,13 @@ class multiSizeModel extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'multiSizeImg',
-        'multiSizeTittle',
-        'multiSizeUrl',
-        'multiSizeText',
-        'multiSizePos',
-        'multiSizeHit',
-        'multiSizeHitMoney',
-        'multiSizeMoney'
-        
+        'bannerUrl',
+        'bannerPos',
+        'bannerHit',
+        'bannerHitMoney',
+        'bannerMoney',
+        'bannerCaptcha'
+
 
     ];
     protected $validationRules    = [];
