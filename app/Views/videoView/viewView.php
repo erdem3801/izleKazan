@@ -23,7 +23,7 @@
             player = new YT.Player('player', {
                 height: '390',
                 width: '640',
-                videoId: 'M7lc1UVf-VE',
+                videoId: '0L2Gu5BE3M4',
                 playerVars: {
                     'playsinline': 1
                 },
@@ -47,7 +47,7 @@
             YTplayer, bad_state = 0,
             bad_state_max = 4,
             was_started = 0;
-        var time = 20;
+        var time = 50;
 
         function onPlayerStateChange(event) {
             if (event.data == YT.PlayerState.PLAYING && !done) {

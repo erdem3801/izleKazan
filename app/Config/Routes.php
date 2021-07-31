@@ -50,7 +50,6 @@ $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'controlCenterController::$1');
 	});
 	$routes->group('video', function ($routes) {
-		$routes->match(['get', 'post'], '/', 'videoController::advertiser');
 		$routes->match(['get', 'post'], '(:segment)', 'videoController::$1');
 	});
 });
