@@ -76,6 +76,7 @@
     </div>
 
     <?= $this->include('template/js')  ?>
+    <?= $this->renderSection('js') ?>
 
 
 </body>

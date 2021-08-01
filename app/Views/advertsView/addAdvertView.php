@@ -6,6 +6,6 @@
 <?= $this->section('content') ?>
 
 <h1>
-    sayfa 2
+ add advert
 </h1>
 <?= $this->endSection() ?>
