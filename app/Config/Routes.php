@@ -55,12 +55,15 @@ $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 	$routes->group('video', function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'videoController::$1');
 	});
+
 	$routes->group('adverts', function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'advertsController::$1');
 	});
+
 	$routes->group('referrals', function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'referralsController::$1');
 	});
+});
 
 $routes->group('user', function ($routes) {
 	$routes->match(['get', 'post'], '(:segment)', 'userController::$1');
