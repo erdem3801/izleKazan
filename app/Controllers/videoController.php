@@ -17,6 +17,7 @@ class videoController extends BaseController
 		$locale = $this->request->getLocale();
         $viewData['locale'] = $locale;
         $view = __FUNCTION__;
+        $viewData['videoID'] = $this->request->getGet('vi');
 		
         return view("{$this->viewFolder}/{$view}View", $viewData);
 	}

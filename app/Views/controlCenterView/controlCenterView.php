@@ -1,4 +1,14 @@
 <?= $this->extend('template/layout') ?>
+<?= $this->section('js')  ?>
+<!-- Page level plugins -->
+<script src="<?= base_url('public')  ?>/assets/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="<?= base_url('public')  ?>/js/demo/chart-area-demo.js"></script>
+<script src="<?= base_url('public')  ?>/js/demo/chart-pie-demo.js"></script>
+
+<?= $this->endSection()  ?>
+
+
 <?= $this->section('content') ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -253,8 +263,8 @@
                             <div class="col-md-3">
                                 <div class="task-performer task-542413">
                                     <div class="task-performer_cover">
-                                        <img src="https://i.ytimg.com/vi/0L2Gu5BE3M4/hqdefault.jpg" alt="img">
-                                        <a href="/view-video/542413" target="_blank" data-ajaxe="false" class="task-performer_play">
+                                        <img src="https://i.ytimg.com/vi/<?= $videoID  ?>/hqdefault.jpg" alt="img">
+                                        <a href="<?= base_url("{$locale}/video/view?vi={$videoID}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_play">
                                             <i class="fas fa-play " style="color: white;"></i>
                                         </a>
                                     </div>
@@ -271,7 +281,7 @@
                                     <div class="watch-video-price row d-flex justify-content-between mt-3 px-5">
                                         <div class="task-performer_price">
                                             +$&nbsp;0.000357 </div>
-                                        <a href="<?= base_url("{$locale}/video/view")  ?>" target="_blank" data-ajaxe="false" class="task-performer_btn">
+                                        <a href="<?= base_url("{$locale}/video/view?vi={$videoID}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_btn">
                                             Start </a>
                                     </div>
                                 </div>

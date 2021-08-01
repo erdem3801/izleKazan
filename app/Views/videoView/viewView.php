@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <?= $this->include('template/css')  ?>
+</head>
+
+<body id="page-top">
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+    <div id="wrapper">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content" class="jusutify-content-center">
+                <div id="player" data-VideoID="<?= $videoID  ?>"></div>
+            </div>
 
+        </div>
 
+    </div>
+
+    <?= $this->include('template/js')  ?>
 
     <script>
         // 2. This code loads the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
 
-        tag.src = "https://www.youtube.com/iframe_api";
+        var tag = document.createElement('script')
+
+        tag.src = "https://www.youtube.com/iframe_api"
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -19,11 +38,13 @@
         //    after the API code downloads.
         var player;
 
+        const videoId = $('#player').attr('data-VideoID')
+
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '390',
                 width: '640',
-                videoId: '0L2Gu5BE3M4',
+                videoId: videoId,
                 playerVars: {
                     'playsinline': 1
                 },

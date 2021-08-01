@@ -46,11 +46,17 @@ $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 		$routes->match(['get', 'post'], 'profile', 'userController::profile');
 	});
 	$routes->group('controlCenter', function ($routes) {
-		$routes->match(['get', 'post'], '/', 'controlCenterController::advertiser');
+		$routes->match(['get', 'post'], '/', 'controlCenterController::controlCenter');
 		$routes->match(['get', 'post'], '(:segment)', 'controlCenterController::$1');
 	});
 	$routes->group('video', function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'videoController::$1');
+	});
+	$routes->group('adverts', function ($routes) {
+		$routes->match(['get', 'post'], '(:segment)', 'advertsController::$1');
+	});
+	$routes->group('referrals', function ($routes) {
+		$routes->match(['get', 'post'], '(:segment)', 'referralsController::$1');
 	});
 });
 
