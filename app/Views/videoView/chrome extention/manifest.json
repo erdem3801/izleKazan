@@ -1,0 +1,30 @@
+{
+    "name": "Chreome Extention m1",
+    "description": "ilk chrome extention",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "./img/16xicon.png"
+    },
+    "background": {
+        "service_worker": "./background.js"
+    },
+    "action": {
+        "default_popup": "./popup.html",
+        "default_icons": {
+            "16": "./img/16xicon.png"
+        },
+        "options_page" : "./options.html",
+        "preimissions" :[
+                "activeTab",
+                "tabs",
+                "storage",
+                "scripting"
+        ],
+        "host_permissions" : [
+            "https://www.google.com/*",
+            "<all_urls>",
+            "*://*/*" 
+        ]
+    }
+}
