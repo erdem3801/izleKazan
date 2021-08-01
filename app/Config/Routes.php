@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index', ['filter' => 'Auth']);
 
 
+$routes->get(  'addAdverts', 'addAdvertsController::addAdverts' );
+
 $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 	
 	$routes->get('/', 'Home::index');
@@ -49,6 +51,7 @@ $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 		$routes->match(['get', 'post'], '/', 'controlCenterController::controlCenter');
 		$routes->match(['get', 'post'], '(:segment)', 'controlCenterController::$1');
 	});
+
 	$routes->group('video', function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'videoController::$1');
 	});
@@ -58,9 +61,7 @@ $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 	$routes->group('referrals', function ($routes) {
 		$routes->match(['get', 'post'], '(:segment)', 'referralsController::$1');
 	});
-});
 
- 
 $routes->group('user', function ($routes) {
 	$routes->match(['get', 'post'], '(:segment)', 'userController::$1');
 });
