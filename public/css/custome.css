@@ -1,4 +1,4 @@
-.bg-gradient-primary {
+.bg-gradient-custome {
     background-color: #73798c;
     background-image: linear-gradient(180deg, #040710 10%, #220a50 100%);
     background-size: cover;
@@ -242,9 +242,7 @@ a:hover {
     line-height: 16px;
     color: #3D3D3D;
 }
-    flex-direction: column;
-
-}
+ 
 .textler-about{
     margin-bottom: 10px;
     font-size: 12px;
