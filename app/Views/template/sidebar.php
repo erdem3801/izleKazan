@@ -44,7 +44,7 @@
                 <h6 class="collapse-header"><?= lang("sidebar.referansKesici")  ?>:</h6>
                 <a class="collapse-item" href="<?= base_url("{$locale}/referrals/statistic")  ?>"><?= lang("sidebar.menuReferans1")  ?></a>
                 <a class="collapse-item" href="<?= base_url("{$locale}/referrals/structure")  ?>"><?= lang("sidebar.menuReferans2")  ?></a>
-                <a class="collapse-item" href="<?= base_url("{$locale}/referrals/promoBanners")  ?>"><?= lang("sidebar.menuReferans3")  ?></a>
+                <a class="collapse-item" href="<?= base_url("{$locale}/referrals/promoBanners")  ?>"> <?= lang("sidebar.menuReferans3")  ?></a>
                 <a class="collapse-item" href="<?= base_url("{$locale}/referrals/utmTags")  ?>"><?= lang("sidebar.menuReferans4")  ?></a>
             </div>
         </div>

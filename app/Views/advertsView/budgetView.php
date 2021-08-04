@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-    <div class="card shadow mb-4">
+    <div class="card shadow">
         <div class="card-header">
             <h3>PAYMENT HISTORY</h3>
         </div>
