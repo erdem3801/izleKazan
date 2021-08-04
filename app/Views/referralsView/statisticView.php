@@ -4,8 +4,8 @@
 
 
 <?= $this->section('content') ?>
+<div class="container-fluid">
 
-<h1>
-statistic
-</h1>
+</div>
+
 <?= $this->endSection() ?>
