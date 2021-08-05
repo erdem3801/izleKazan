@@ -65,6 +65,10 @@ $routes->group('{locale}' , ['filter' => 'Auth'] , function ($routes) {
 	});
 });
 
+$routes->group('{locale}/user', function ($routes) {
+	$routes->match(['get', 'post'], '(:segment)', 'userController::$1');
+});
+
 $routes->group('user', function ($routes) {
 	$routes->match(['get', 'post'], '(:segment)', 'userController::$1');
 });
