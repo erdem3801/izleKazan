@@ -14,6 +14,7 @@
     <div id="wrapper">
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+            <h4 id="dur">0</h4>
             <!-- Main Content -->
             <div id="content" class="jusutify-content-center">
                 <div id="player" data-VideoID="<?= $videoID  ?>"></div>
@@ -68,7 +69,7 @@
             YTplayer, bad_state = 0,
             bad_state_max = 4,
             was_started = 0;
-        var time = 50;
+        var time = 15;
 
         function onPlayerStateChange(event) {
             if (event.data == YT.PlayerState.PLAYING && !done) {
@@ -97,16 +98,19 @@
                 was_started = 1;
                 if (player.isMuted() || player.getVolume() < 15) {
                     console.log('ses açın');
+                    $('#dur').text('Ses acçın');
+
                 } else {
                     time--;
                     console.log('time: ', time);
+                    $('#dur').text(time);
                 }
             }
 
             if (!state && was_started) {
                 player.playVideo();
             }
-            if (time >= 0) {
+            if (time >= 1) {
                 setTimeout(function() {
                     ticker()
                 }, 1000);

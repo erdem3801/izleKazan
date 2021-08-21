@@ -12,6 +12,8 @@
     <title><?= lang('sidebar.title')  ?></title>
 
     <?= $this->include('template/css')  ?>
+    <?= $this->renderSection('css') ?>
+
     
 </head>
 

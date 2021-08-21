@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-custome sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
@@ -28,8 +28,8 @@
         <div id="advertsUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header"><?= lang("sidebar.menuReklamKesici")  ?>:</h6>
-                <a class="collapse-item" href="<?= base_url("{$locale}/adverts/addAdvert")  ?>"><?= lang("sidebar.menuReklam1")  ?></a>
-                <a class="collapse-item" href="<?= base_url("{$locale}/adverts/myAds")  ?>"><?= lang("sidebar.menuReklam2")  ?></a>
+                <a class="collapse-item" href="<?= base_url("{$locale}/adverts/myAds")  ?>"><?= lang("sidebar.menuReklam1")  ?></a>
+                <a class="collapse-item" href="<?= base_url("{$locale}/adverts/addAdvert")  ?>"><?= lang("sidebar.menuReklam2")  ?></a>
                 <a class="collapse-item" href="<?= base_url("{$locale}/adverts/budget")  ?>"><?= lang("sidebar.menuReklam3")  ?></a>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <h6 class="collapse-header"><?= lang("sidebar.referansKesici")  ?>:</h6>
                 <a class="collapse-item" href="<?= base_url("{$locale}/referrals/statistic")  ?>"><?= lang("sidebar.menuReferans1")  ?></a>
                 <a class="collapse-item" href="<?= base_url("{$locale}/referrals/structure")  ?>"><?= lang("sidebar.menuReferans2")  ?></a>
-                <a class="collapse-item" href="<?= base_url("{$locale}/referrals/promoBanners")  ?>"><?= lang("sidebar.menuReferans3")  ?></a>
+                <a class="collapse-item" href="<?= base_url("{$locale}/referrals/promoBanners")  ?>"> <?= lang("sidebar.menuReferans3")  ?></a>
                 <a class="collapse-item" href="<?= base_url("{$locale}/referrals/utmTags")  ?>"><?= lang("sidebar.menuReferans4")  ?></a>
             </div>
         </div>
