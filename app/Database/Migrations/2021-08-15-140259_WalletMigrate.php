@@ -37,14 +37,14 @@ class WalletMigrate extends Migration
 		 
 		]);
 		$this->forge->addKey('ID', true);
-		$this->forge->createTable('WalletTable');
+		$this->forge->createTable('walletTable');
 		//
 		//
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('WalletTable');
+		$this->forge->dropTable('walletTable');
 
 		//
 	}
