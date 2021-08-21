@@ -51,9 +51,12 @@ class userToken
         session()->set('userData',$userData);
         session()->set('token', $jwt);
     }
-    public function checkJWT()
+    public function checkJWT($userToken = null)
     {
+        if($userToken == null)
         $token = session()->get('token');
+        else 
+        $token = $userToken;
         try {
 
             $decoded = JWT::decode($token, $this->privateKey(), array('HS256'));

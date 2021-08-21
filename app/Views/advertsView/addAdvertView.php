@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-md-6">
 
-                        <a href="#" class="info-box p-5">
+                        <a href="<?= base_url("{$locale}/adverts/addVideo")  ?>" class="info-box p-5">
                             <span class="info-box-icon"><i class="fab fa-youtube" style="font-size: 5rem;"></i></span>
 
                             <div class="info-box-content">

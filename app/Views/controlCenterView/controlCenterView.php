@@ -20,10 +20,10 @@
     <div class="card-body">
         <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link " id="custom-content-above-user-tab" data-toggle="pill" href="#custom-content-above-user" role="tab" aria-controls="custom-content-above-user" aria-selected="false">User</a>
+                <a class="nav-link active" id="custom-content-above-user-tab" data-toggle="pill" href="#custom-content-above-user" role="tab" aria-controls="custom-content-above-user" aria-selected="true">User</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" id="custom-content-above-advertiser-tab" data-toggle="pill" href="#custom-content-above-advertiser" role="tab" aria-controls="custom-content-above-advertiser" aria-selected="true">Advertiser</a>
+                <a class="nav-link " id="custom-content-above-advertiser-tab" data-toggle="pill" href="#custom-content-above-advertiser" role="tab" aria-controls="custom-content-above-advertiser" aria-selected="false">Advertiser</a>
             </li>
         </ul>
 
@@ -174,7 +174,7 @@
                 <div class="row d-flex justify-content-between align-items-center mt-4">
 
                     <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
-                        <h5 class="user-bal text-center m-2">$1.00000002</h5>
+                        <h5 class="user-bal text-center m-2">$<?= $wallet['walletMoney'] ?? '0.000001'  ?></h5>
                     </div>
                     <div class="col-xl-2 col-md-4 col-sm-6 text-center mt-4">
                         <a href="#" class="btn btn-outline-info btn-sm border-0"><i class="fas fa-wallet"></i> widthdraw funds</a>
@@ -260,11 +260,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
+                            <?php foreach($videos as $value) :  ?>
                             <div class="col-md-3">
                                 <div class="task-performer task-542413">
                                     <div class="task-performer_cover">
-                                        <img src="https://i.ytimg.com/vi/<?= $videoID  ?>/hqdefault.jpg" alt="img">
-                                        <a href="<?= base_url("{$locale}/video/view?vi={$videoID}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_play">
+                                        <img src="https://i.ytimg.com/vi/<?= $value['videoId']  ?>/hqdefault.jpg" alt="img">
+                                        <a href="<?= base_url("{$locale}/video/view?vi={$value['ID']}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_play">
                                             <i class="fas fa-play " style="color: white;"></i>
                                         </a>
                                     </div>
@@ -281,11 +282,12 @@
                                     <div class="watch-video-price row d-flex justify-content-between mt-3 px-5">
                                         <div class="task-performer_price">
                                             +$&nbsp;0.000357 </div>
-                                        <a href="<?= base_url("{$locale}/video/view?vi={$videoID}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_btn">
+                                        <a href="<?= base_url("{$locale}/video/view?vi={$value['ID']}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_btn">
                                             Start </a>
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach  ?>
                         </div>
                     </div>
                 </div>

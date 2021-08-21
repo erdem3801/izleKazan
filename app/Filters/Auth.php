@@ -13,7 +13,7 @@ class Auth implements FilterInterface
 
         $token  = new userToken();
        
-        $isAuth = $token->checkJWT($token); 
+        $isAuth = $token->checkJWT(); 
         if(!$isAuth)
             return redirect()->to(base_url('user/singin'));
            // echo 'token expided';

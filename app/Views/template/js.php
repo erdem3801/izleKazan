@@ -6,8 +6,11 @@
     <script src="<?= base_url('public')  ?>/assets/jquery-easing/jquery.easing.min.js"></script>
 
 
+    <!-- Select2 -->
+    <script src="<?= base_url('public')  ?>/plugins/select2/js/select2.full.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('public')  ?>/dist/js/adminlte.js"></script>
+
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('public')  ?>/js/sb-admin-2.min.js"></script>

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\videosModel;
+use App\Models\walletModel;
 
 class controlCenterController extends BaseController
 {
@@ -17,11 +19,11 @@ class controlCenterController extends BaseController
         $viewData['locale'] = $locale;
         $view = __FUNCTION__;
 
-        $videoUrl = "https://www.youtube.com/watch?v=v0QTdCHX_-c";
-        $parts = parse_url($videoUrl , PHP_URL_QUERY);
-        parse_str($parts, $query);
-        $viewData['videoID'] = $query['v'];
-       
+        $videoModel = model('videosModel');
+        $walletModel = model('walletModel');
+
+        $viewData['videos'] = $videoModel->where('userId !=', session()->get('userData.ID'))->findAll();
+        $viewData['wallet']  = $walletModel->where('userId', session()->get('userData.ID'))->first();
 
         return view("{$this->viewFolder}/{$view}View", $viewData);
         # code...
