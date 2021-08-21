@@ -163,12 +163,10 @@ class userController extends BaseController
         $email->setMessage(base_url("{$locale}user/Auth?token={$this->request->getGet('id')}"));
         session()->setFlashData('email', $this->request->getGet('email'));
         session()->setFlashData('id', $this->request->getGet('id'));
-        if ($email->send()) {
+      
             return redirect()->to(base_url("user/mailSended"));
-        } else {
-            $data = $email->printDebugger(['headers']);
-            print_r($data);
-        }
+        
+        
         # code...
     }
     public function mailSended()
