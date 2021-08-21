@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class walletModel extends Model
+class videosModel extends Model
 {
-    protected $table      = 'walletTable';
+    protected $table      = 'videoTable';
     protected $primaryKey = 'ID';
 
     protected $useAutoIncrement = true;
@@ -16,22 +16,29 @@ class walletModel extends Model
 
     protected $allowedFields = [
         'userId',
-        'walletMoney',
-        'Money'
-    ];
- 
+        'link',
+        'videoId',
+        'group',
+        'advertsType',
+        'buttonText',
+        'redirectUrl',
+        'trafic',
+        'duration',
+        'viewPerPerson',
+        'viewPerHour',
+        'language',
+        'isStart',
 
-	protected $useTimestamps        = false;
+
+    ];
+
+    protected $useTimestamps        = false;
 	protected $dateFormat           = 'datetime';
 	protected $createdField         = 'created_at';
 	protected $updatedField         = 'updated_at';
 	protected $deletedField         = 'deleted_at';
-
-    protected $validationRules    = [ 
-     
-    ];
-    protected $validationMessages = [
-      
-    ];
+    
+    protected $validationRules    = [];
+    protected $validationMessages = [];
     protected $skipValidation     = false;
 }

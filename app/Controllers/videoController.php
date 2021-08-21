@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\videosModel;
 
 class videoController extends BaseController
 {
@@ -17,7 +18,13 @@ class videoController extends BaseController
 		$locale = $this->request->getLocale();
         $viewData['locale'] = $locale;
         $view = __FUNCTION__;
-        $viewData['videoID'] = $this->request->getGet('vi');
+
+        $videoModel = model('videosModel');
+        $vid = $this->request->getGet('vi');
+        $viewData['video'] = $videoModel->find($vid);
+        if(!$viewData['video']){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Video  {$vid}");
+        }
 		
         return view("{$this->viewFolder}/{$view}View", $viewData);
 	}

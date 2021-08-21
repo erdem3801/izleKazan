@@ -5,7 +5,8 @@
   <!-- Custom styles for this template-->
   <link rel="stylesheet" href="<?= base_url('public')  ?>/dist/css/adminlte.min.css">
   <link href="<?= base_url('public')  ?>/css/sb-admin-2.min.css" rel="stylesheet">
-
+<!-- Select2 -->
+<link rel="stylesheet" href="<?= base_url('public')  ?>/plugins/select2/css/select2.min.css">
 
   <!-- Custom styles for this template-->
   <link href="<?= base_url('public')  ?>/css/custome.css" rel="stylesheet">

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Libraries\userToken;
+use App\Models\walletModel;
 use Google\Service\Oauth2;
 
 class userController extends BaseController
@@ -44,8 +45,7 @@ class userController extends BaseController
                 $google_service = new Oauth2($google_client);
                 $googleData = $google_service->userinfo->get();
 
-                $isUser = $this->subModel->where('googleId', $googleData['id'])
-                    ->first();
+                $isUser = $this->subModel->where('googleId', $googleData['id'])->first();
 
                 if ($isUser) {
                     $userToken->setJWT($isUser);
@@ -60,7 +60,13 @@ class userController extends BaseController
                         'password'  => $googleData['id'] == null ? '' : $googleData['id'],
                     ];
                     $this->subModel->insert($queryData);
-                    $queryData['ID'] = $this->subModel->getInsertID();
+                    $lastId = $this->subModel->getInsertID();
+                    $walletModel = model('walletModel');
+                    
+                    $walletModel->insert(['userId' => $lastId]);
+                   
+
+                    $queryData['ID'] = $lastId;
                     $userToken->setJWT($queryData);
 
                     return redirect()->to(base_url($locale));
@@ -123,13 +129,15 @@ class userController extends BaseController
                 'eMail'     => $data['eMail'],
                 'password'  => $data['password'],
             ];
-
-            if ($this->subModel->insert($queryData) !== false) {
-
+            $queryRequest = $this->subModel->insert($queryData);
+            if ($queryRequest) {
+                $lastId = $this->subModel->getInsertID();
+                $walletModel = model('walletModel');
+                $walletModel->insert(['userId' => $lastId]);
                 return $this->response->setJSON([
                     'status' => 'success',
                     'data' => [
-                        'id' => $this->subModel->getInsertID(),
+                        'id' => $lastId,
                         'email' => $data['eMail']
                     ]
                 ]);
@@ -142,7 +150,7 @@ class userController extends BaseController
         }
         #endregion;
 
-        return view("{$this->viewFolder}/{$view}View",$viewData);
+        return view("{$this->viewFolder}/{$view}View", $viewData);
         # code...
     }
     public function emailAuth()
@@ -198,17 +206,16 @@ class userController extends BaseController
             $connectionResult =  $this->subModel->update($userData['ID'], $this->request->getPost());
             if ($connectionResult) {
                 $userData = $this->subModel->find($userData['ID']);
-                session()->set('userData',$userData);
+                session()->set('userData', $userData);
                 //TODO: güncelleme başarlı durumunda uyarı verilecek
-            }
-            else{
+            } else {
                 //TODO: göncelleme başarısız durumunda uyrarı mesajı verilecek
             }
         }
         $viewData['userData'] = $userData;
         #endregion;
-       
-   
+
+
 
         return view("{$this->viewFolder}/{$view}View", $viewData);
         # code...

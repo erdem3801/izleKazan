@@ -64,7 +64,9 @@ class User extends Migration
 				'type' => 'tinyint',
 				'default' => 0,
 			],
-
+			'created_at DATETIME default current_timestamp ',
+			'updated_at DATETIME default current_timestamp on update current_timestamp',
+			'deleted_at DATETIME default null',
 
 		]);
 		$this->forge->addKey('ID', true);

@@ -26,6 +26,14 @@ class userModel extends Model
         'password',  
         'isActive'
     ];
+
+    protected $useTimestamps        = false;
+	protected $dateFormat           = 'datetime';
+	protected $createdField         = 'created_at';
+	protected $updatedField         = 'updated_at';
+	protected $deletedField         = 'deleted_at';
+    
+    	 
     protected $validationRules    = [ 
         'eMail'        => 'required|valid_email|is_unique[usertable.eMail]',
         'password'     => 'required|min_length[5]', 
