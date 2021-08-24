@@ -1,0 +1,65 @@
+<?php
+//lang("videoAdverts.adverts.title")
+// override core en language system validation or define your own en language validation message
+return [
+    'addVisit' => [
+        'pageTitle' => 'Visits to site',
+        'formTitle' => 'Main parameters',
+        
+        'link' => 'Link to site ',
+        'linkValue' => 'https://www.aksiyonyazilim.com.',
+        'groupTitle' => 'Group',
+        'groupOption' => 'No group',
+        'optionsTittle' => 'VISIT OPTIONS',
+        'trafficTitle' => 'Traffic source',
+        'trafficcheckButton1' => 'All sources',
+        'trafficcheckButton2' => 'Extension',
+        'trafficcheckButton3' => 'Mobile app',
+        'dailyViews' => '11000 Daily coverage',
+        'dailyViewsInfoTitle' => 'Daily coverage',
+        'dailyViewsInfoText' => 'The total number of unique users in the last 24 hours',
+        'userOption1'=>'User must solve captcha (+$0,1)',
+        'userOption1InfoText'  => 'In order to complate the visit was considered user needs to solve captcha',    
+        'userOption2'=> 'Hide source(+$0,1)',
+        'userOption2InfoText'=>'In traffic source report will you will see  <<unknown>> instead of <<site_adresi>>',
+        'option1' => 'Duraction of visit',
+        'option1-1' => '3 seconds',
+        'option1-2' => '10 seconds',
+        'option1-3' => '30 seconds',
+        'option1-4' => '60 seconds',
+        'option1InfoTitle' => 'Duraction of visit',
+        'option1InfoText' => 'Guaranteed stay time on the website',
+        'option2' => 'Visits per user no more than (+$0,1)',
+        'option2-1'=> 'No limits',
+        'option2-2'=> '1 visit',
+        'option2-3'=> '2 visits',
+        'option2-4'=> '3 visits',
+        'option2-5'=> '4 visits',
+        'option2-6'=> '5 visits',
+        'opiton2InfoTitle'=>'Visits per munite',
+        'option2InfoText' => 'Maximum number of visits by one unique user within 90 days',
+        'option3'=> 'Number of visits per munite',
+        'option3-1'=> 'No limits',
+        'option3-2'=> '100 visits per munite',
+        'option3-3'=> '60 visits per munite',
+        'option3-4'=> '30 visits per munite',
+        'option3-5'=> '15 visits per munite',
+        'option3-6'=> '5 visits per munite',
+      
+        'geotargetingTitle' => 'Geotargeting',
+        'geotargetingTitleInfoTitle' => 'Geotargeting',
+        'geotargetingTitleInfoText' => 'Your video will be seen only by users from the selected countries. Country determined by IP. For display in all countries, sipmly do not use this setting.',
+        'geortargetingCheckBoxTitle' => 'Do not show in selected countries',
+        'geortargetingCheckBoxInfo' => 'Enable this option if you want to specify a list of countries in which you do not want to show this ad',
+     
+      
+        'options2Title' => 'Language',
+        'options2InfoTıtle' => 'Language',
+        'options2InfoText' => 'Your video will be viewed by users who speak the selected language. Users language is determined by browser settings or site settings',
+        'button1' => 'Back',
+        'button2' => 'Save',
+        'button3' => 'Start',
+        'tarife1' => 'Tariff',
+        'tarife2' => '$2,25 per 1000 visits '
+    ]
+];

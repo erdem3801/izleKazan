@@ -2,18 +2,25 @@
 //lang("videoAdverts.adverts.title")
 // override core en language system validation or define your own en language validation message
 return [
-    'multisizeAdverts' => [
-        'pageTitle' => 'Create ad',
-        'formTitle' => 'Main parameters',
-        'photoButton' => 'Upload',
-        'link' => 'Link to site ',
+    'bannerAdvers' => [
+        'link' => 'Site Linki ',
         'linkValue' => 'https://www.aksiyonyazilim.com.',
-        'title' => 'Title',
-        'descripton' => 'Description',
-        'descriptionText' => 'Soft Puppy KONG ruhber formula is customized for puppy teeth andgums.',
+        
+        'pageTitle' => 'Banner Oluştur',
+        'formTitle' => 'Ana Parametreler',
+        'marcos'=> '[marcos]',
+        'marcosText'=>'[[site_id] - 
+        kullanıcının tıkladığı web sitesinin kimliğiyle değiştirilir. Tıklama bir uzantıdan yapılırsa, bu makrolar, dizenin başında u harfiyle kullanıcı kimliğiyle değiştirilir. Örneğin, u123.
+        [ad_id] - Reklam kimliğiyle değiştirildi.
+        [cat_id] - Kategori kimliğiyle dğeiştirildi.
+        [source] - Kaynak türü ile değiştirir (ext-extension, net-advertising network).
+        [geo] - replaced with the country code in two-letter format.]',
+
+      
         'groupTitle' => 'Group',
         'groupOption' => 'No group',
-        'imgTitle' => 'BANNERS PREVIEW',
+        'bannerOption' => 'banners',
+
         'priceTitle' => 'PRICE SETTING',
         'priceOption1' => 'Pay for impressions',
         'priceOption2' => 'Pay for clicks',
@@ -21,6 +28,7 @@ return [
         'priceText' => 'The price bid affects the position in the banner queue. The higher the bid, the higher the position. Banners in the first positions views the largest number of unique users.
         The actual amount that is deducted for impressions may be less than the bid you set. The system works on the principle of second price Auction: the deducted cost is equal to a banner bid at a position below + $0.001',
         'priceBarText' => 'Cost per 1000 impressions',
+
         'optionsTittle' => 'ROTATION PARAMETERS',
         'trafficTitle' => 'Traffic source',
         'trafficcheckButton1' => 'All sources',
@@ -48,21 +56,32 @@ return [
      
         'options1Title' => 'Pause rotation for specific user after',
         'options1_1' => 'Disabled',
-        'options1_2' => '10 minutes',
-        'options1_3' => '30 minutes',
-        'options1_4' => '1 hour',
-        'options1_5' => '3 hours',
-        'options1_6' => '6 hours',
-        'options1InfoTitle' => 'Rotation Starts',
-        'options1InfoText' => 'The limit after which banner displays will resume if impressions for a specific user have been suspended. This allows you to save budget.',
+        'options1_2' => '20 impressions',
+        'options1_3' => '50 impressions',
+        'options1_4' => '100 impressions',
+        'options1_5' => '150 impressions',
+        'options1_6' => '200 impressions',
+        'options1InfoTitle' => 'Pause Rotation',
+        'options1InfoText' => 'The banner stops being displayed to each specific user after the selected number of impressions. Impressions will resume after a while. This allows you to spend your budget more economically',
       
-        'options2Title' => 'Language',
-        'options2InfoTıtle' => 'Language',
-        'options2InfoText' => 'Your video will be viewed by users who speak the selected language. Users language is determined by browser settings or site settings',
+
+        'options2Title' => 'Pause rotation for specific user after',
+        'options2_1' => 'Disabled',
+        'options2_2' => '10 minutes',
+        'options2_3' => '30 minutes',
+        'options2_4' => '1 hour',
+        'options2_5' => '3 hours',
+        'options2_6' => '6 hours',
+        'options2InfoTitle' => 'Rotation Starts',
+        'options2InfoText' => 'The limit after which banner displays will resume if impressions for a specific user have been suspended. This allows you to save budget.',
+      
+        'options3Title' => 'Language',
+        'options3InfoTıtle' => 'Language',
+        'options3InfoText' => 'Your video will be viewed by users who speak the selected language. Users language is determined by browser settings or site settings',
         'button1' => 'Back',
         'button2' => 'Save',
         'button3' => 'Start',
         'tarife1' => 'Tariff',
-        'tarife2' => '$,161 per 1000 '
+        'tarife2' => '$0,159 per 1000 impressions'
     ]
 ];

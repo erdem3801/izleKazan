@@ -1,0 +1,65 @@
+<?php
+//lang("videoAdverts.adverts.title")
+// override core en language system validation or define your own en language validation message
+return [
+    'addVisit' => [
+        'pageTitle' => 'Site Ziyareti',
+        'formTitle' => 'Ana parametreler',
+        
+        'link' => 'Site linki ',
+        'linkValue' => 'https://www.aksiyonyazilim.com.',
+        'groupTitle' => 'Grup',
+        'groupOption' => 'Grup Yok',
+        'optionsTittle' => 'ZİYARET AYARLARI',
+        'trafficTitle' => 'Trafik kaybakları',
+        'trafficcheckButton1' => 'Bütün kaynaklar',
+        'trafficcheckButton2' => 'Uzantı',
+        'trafficcheckButton3' => 'Mobil Uygulama',
+        'dailyViews' => '11000 Günlük Ziyaretçi',
+        'dailyViewsInfoTitle' => 'Günlük Kapasite',
+        'dailyViewsInfoText' => 'Son 24 saatteki toplam benzersiz kullanıcı sayısı',
+        'userOption1'=>'Kullanıcılar Bilmece Çözmek zorundadır (+$0,1)',
+        'userOption1InfoText'  => 'Ziyereti tamamlamak için kullanıcıların bilmece çözmeleri gerektiği düşünüldü',    
+        'userOption2'=> 'Kaynağı gizle(+$0,1)',
+        'userOption2InfoText'=>'URL uzantısında <<site_adresi>> yerine  <<unknown>> gözükecektir.',
+        'option1' => 'Ziyaret Süresi',
+        'option1-1' => '3 Saniye',
+        'option1-2' => '10 Saniye',
+        'option1-3' => '30 Saniye',
+        'option1-4' => '60 Saniye',
+        'option1InfoTitle' => 'Ziyaret Süresi',
+        'option1InfoText' => 'Web sitesinde garanti kalma süresi',
+        'option2' => 'Kullanıcı başına izin verilen ziyaret sayısı (+$0,1)',
+        'option2-1'=> 'Limit yok',
+        'option2-2'=> '1 ziyaret',
+        'option2-3'=> '2 ziyaret',
+        'option2-4'=> '3 ziyaret',
+        'option2-5'=> '4 ziyaret',
+        'option2-6'=> '5 ziyaret',
+        'opiton2InfoTitle'=>'Dakika başına ziyeret',
+        'option2InfoText' => '90 gün içerisinde 1 kullanıcı tarafından yapılan maksimum ziyaret sayısı',
+        'option3'=> ' Dakika başına ziyeret',
+        'option3-1'=> 'Limit yok',
+        'option3-2'=> 'Dakika başına ziyeret 100',
+        'option3-3'=> 'Dakika başına ziyeret 60',
+        'option3-4'=> 'Dakika başına ziyeret 30',
+        'option3-5'=> 'Dakika başına ziyeret 15',
+        'option3-6'=> 'Dakika başına ziyeret 5',
+      
+        'geotargetingTitle' => 'Coğrafi hedefleme',
+        'geotargetingTitleInfoTitle' => 'Coğrafi hedefleme',
+        'geotargetingTitleInfoText' => 'Videonuz yalnızca seçili ülkelerdeki kullanıcılar tarafından görüntülenecektir. Tüm ülkelerde görüntülenmesi için bu ayarı kullanmayınız.',
+        'geortargetingCheckBoxTitle'=>'Seçili ülkelerde gösterme',
+        'geortargetingCheckBoxInfo'=>'Reklamı göstermek istemediğiniz ülkeleri seçmek istiyorsanız kullanınız',
+       
+      
+        'options2Title' => 'Dil Ayarı',
+        'options2InfoTıtle' => 'Dil Ayarı',
+        'options2InfoText' => 'Reklamını sadece dili kullanan kullanancılar tarafından görüntülenecektir. Kullanıcı dili tarayıcı ayarları yada site içerisindeki dil ayarının tespiti ile belirlenir.',
+        'button1' => 'Geri',
+        'button2' => 'Kaydet',
+        'button3' => 'Başlat',
+        'tarife1' => 'Tarife',
+        'tarife2' => 'Her 1000 Ziyatere $2,25'
+    ]
+];
