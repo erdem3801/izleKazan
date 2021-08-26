@@ -2,47 +2,39 @@
 //lang("videoAdverts.adverts.title")
 // override core en language system validation or define your own en language validation message
 return [
-    'bannerAdvers' => [
+    'multisizeAdverts' => [
+        'pageTitle' => 'Oluştur',
+        'formTitle' => 'Ana parametreler',
+        'photoButton' => 'Yükle',
         'link' => 'Site Linki ',
         'linkValue' => 'https://www.aksiyonyazilim.com.',
-        
-        'pageTitle' => 'Banner Oluştur',
-        'formTitle' => 'Ana Parametreler',
-        'marcos'=> '[marcos]',
-        'marcosText'=>'[[site_id] - 
-        kullanıcının tıkladığı web sitesinin kimliğiyle değiştirilir. Tıklama bir uzantıdan yapılırsa, bu makrolar, dizenin başında u harfiyle kullanıcı kimliğiyle değiştirilir. Örneğin, u123.
-        [ad_id] - Reklam kimliğiyle değiştirildi.
-        [cat_id] - Kategori kimliğiyle değiştirildi.
-        [source] - Kaynak türü ile değiştirir (ext-extension, net-advertising network).
-        [geo] - İki harfli biçimde ülke koduyla değiştirildi.',
-
-      
+        'title' => 'Başlık',
+        'descripton' => 'Açıklama',
+        'descriptionText' => 'Açıklama....',
         'groupTitle' => 'Grup',
-        'groupOption' => 'Grup Yok',
-        'bannerOption' => 'banners',
-
+        'groupOption' => 'Grup yok',
+        'imgTitle' => 'Resim ayarları',
         'priceTitle' => 'Ödeme Ayarları',
-        'priceOption1' => 'İzlenimlere öde',
-        'priceOption2' => 'Tıklalara Öde',
+        'priceOption1' => 'Gösterimler için ödeme yap',
+        'priceOption2' => 'Tıklamalar için ödeme yap',
         'priceInfo' => '99% Benzersiz kullanıcı kapasitesi',
         'priceText' => 'Fiyat teklifi afiş konumunu etkiler. Teklif ne kadar yüksek olursa konum sırasıda okadar önce gelir. İlk konum sırasında bulunan afişler en fazla benzersiz kullanıcı ile buluşan afişlerdir.
         Gösterimler için düşülen gerçek tutar, belirlediğiniz tekliften daha az olabilir. Sistem, ikinci fiyat Açık Artırma ilkesine göre çalışır: düşülen maliyet, + 0,001 ABD dolarının altındaki bir konumdaki bir banner teklifine eşittir.',
-        'priceBarText' => '1000 gösterim başına maliyet',
-
-        'optionsTittle' => 'Yayınğ Ayarları',
-        'trafficTitle' => 'Trafik kaynagı',
-        'trafficcheckButton1' => 'Bütün kaynaklar',
+        'priceBarText' => 'Her 1000 gösterim için',
+        'optionsTittle' => 'Gösteirm Ayaarları',
+        'trafficTitle' => 'Trafik ayarları',
+        'trafficcheckButton1' => 'Bütün Kaynaklar',
         'trafficcheckButton2' => 'Uzantı',
         'trafficcheckButton3' => 'Mobil uygulama',
-        'dailyViews' => '11000 Günlük Kapasite',
-        'dailyViewsInfoTitle' => 'Günlük Kapasite',
+        'dailyViews' => '11000 Günlük kapasite',
+        'dailyViewsInfoTitle' => 'Günlük kapasite',
         'dailyViewsInfoText' => 'Son 24 saatteki benzersiz kullanıcı sayısı',
         'deviceOption' => 'Cihaz ayarları',
-        'deviceOption1' => 'Herhangi bir cihaz',
-        'deviceOption2' => 'Telefon',
+        'deviceOption1' => 'Herhangi bir ciha<z',
+        'deviceOption2' => 'Mobil',
         'deviceOption3' => 'Bilgisayar',
-        'deviceOption4' => 'Tıkladıktan sonra gösterme($0,002)',
-        'deviceOption5' => 'Sadece Gerçek kullanıcılar($0,005)',
+        'deviceOption4' => 'Tıklamadan sonra gösterme($0,002)',
+        'deviceOption5' => 'Sadece gerçek kullanıcılar($0,005)',
         'deviceOption4Info' => 'Bu afiş daha öcne tıklanmış olanlara gösterilmeyecektir. Bu seçenek sizin bütçenizi korur.',
         'deviceOption5Info' => 'Kazançlarını artırmak için sistemi aldatmaya çalışan kullanıcılara insanlık puanı atarız. Puan hesaplama formülü, davranış analizini, ziyaret edilen siteler, çalışma saatleri, Google reCaptcha v3 puanını içerir. Sistemi aldatmaya çalışan kullanıcılar otomatik olarak engellenir. Bu seçeneğin etkinleştirilmesi sadece bot olmayan kullanıcılar tarafından gösterilmesine izin verir.',
         'categoriesTitle'=> 'Kategoriler',
@@ -54,26 +46,15 @@ return [
         'geortargetingCheckBoxTitle' => 'Seçilen ülkede gösterme',
         'geortargetingCheckBoxInfo' => 'Eğer liste halinde ülkeler seçmek istiyorsanız bu seçeğeni etkinleştirin',
      
-        'options1Title' => '1 Kullanıcı başına gösterim sayıları',
-        'options1_1' => 'Etkin değil',
-        'options1_2' => '20 gösterim',
-        'options1_3' => '50 gösterim',
-        'options1_4' => '100 gösterim',
-        'options1_5' => '150 gösterim',
-        'options1_6' => '200 gösterim',
-        'options1InfoTitle' => 'Göstermeyi durdur.',
-        'options1InfoText' => 'Afiş gösterim sayısı bütün kullanıcılar geçerlidir. Eğer bi kullanıcı seçim sayısını tamamlarsa o kullanıcı artık bu reklamı göremez. Bu da bütçenizi daha ekonomik olmasını sağlar',
-      
-
-        'options2Title' => 'Belirli bi kullanıcı gösterim sayısını doldurduktan sonra yeniden gösterilmesi için seçilen süre',
-        'options2_1' => 'Belirsiz',
-        'options2_2' => '10 Dakika',
-        'options2_3' => '30 Dakika',
-        'options2_4' => '1 Saat',
-        'options2_5' => '3 Saat',
-        'options2_6' => '6 Saat',
-        'options2InfoTitle' => 'Gösterimin başlaması',
-        'options2InfoText' => 'Belirli bir kullanıcı gösterim sayısını tamamlarsa gösterimler o kullanıcı için askıya alınır. Bu da bütçenizi daha ekonomik kullanmanızı sağlar.',
+        'options1Title' => 'Tekil kullanıcı için gösterimden sonra durdur.',
+        'options1_1' => 'Etkin Değil',
+        'options1_2' => '10 Dakika',
+        'options1_3' => '30 Dakika',
+        'options1_4' => '1 Saat',
+        'options1_5' => '3 Saat',
+        'options1_6' => '6 Saat',
+        'options1InfoTitle' => 'Gösterim Başlatma',
+        'options1InfoText' => 'Reklam gösterim sayısı bütün kullanıcılar geçerlidir. Eğer bi kullanıcı seçim sayısını tamamlarsa o kullanıcı artık bu reklamı göremez. Bu da bütçenizi daha ekonomik olmasını sağlar.',
       
         'options3Title' => 'Dil',
         'options3InfoTıtle' => 'Dil',
@@ -82,6 +63,6 @@ return [
         'button2' => 'Kaydet',
         'button3' => 'Başlat',
         'tarife1' => 'Tarife',
-        'tarife2' => '$0,159 Her 1000 gösterim için'
+        'tarife2' => '$0,161 Her 1000 '
     ]
 ];
