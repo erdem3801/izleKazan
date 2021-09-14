@@ -28,8 +28,7 @@ class videosModel extends Model
         'viewPerHour',
         'language',
         'isStart',
-
-
+        'payment'
     ];
 
     protected $useTimestamps        = false;

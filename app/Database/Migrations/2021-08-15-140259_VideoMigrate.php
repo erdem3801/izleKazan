@@ -67,6 +67,10 @@ class VideoMigrate extends Migration
 				'type' => 'TINYINT',
 				'constraint' => 2
 			],
+			'payment' => [
+				'type' => 'FLOAT',
+				'default' => 1.00
+			],
 			'created_at DATETIME default current_timestamp ',
 			'updated_at DATETIME default current_timestamp on update current_timestamp',
 			'deleted_at DATETIME default null',

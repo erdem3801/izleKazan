@@ -5,10 +5,7 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('public')  ?>/js/demo/chart-area-demo.js"></script>
 <script src="<?= base_url('public')  ?>/js/demo/chart-pie-demo.js"></script>
-
 <?= $this->endSection()  ?>
-
-
 <?= $this->section('content') ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -26,9 +23,7 @@
                 <a class="nav-link " id="custom-content-above-advertiser-tab" data-toggle="pill" href="#custom-content-above-advertiser" role="tab" aria-controls="custom-content-above-advertiser" aria-selected="false">Advertiser</a>
             </li>
         </ul>
-
         <div class="tab-content" id="custom-content-above-tabContent">
-
             <div class="tab-pane fade" id="custom-content-above-advertiser" role="tabpanel" aria-labelledby="custom-content-above-advertiser-tab">
                 <!-- Content Row -->
                 <div class="row mt-4">
@@ -107,8 +102,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="tab-pane fade show active" id="custom-content-above-user" role="tabpanel" aria-labelledby="custom-content-above-user-tab">
                 <div class="row mt-5">
                     <div class="col-sm-4">
@@ -128,7 +121,6 @@
                             <div class="StatProgress__Current--3xbx8" style="left: calc(50% + 23.76px);"><span>572 EXP</span></div>
                         </div>
                     </div>
-
                     <div class="col-sm-4">
                         <div class="d-flex">
                             <h4 class="Rating-Text mr-3">Speed</h4>
@@ -146,7 +138,6 @@
                             <div class="StatProgress__Current--3xbx8" style="left: calc(1% + 23.76px);"><span> X1 </span></div>
                         </div>
                     </div>
-
                     <div class="col-sm-4">
                         <div class="d-flex">
                             <h4 class="Rating-Text mr-3">QUALIFICATION</h4>
@@ -164,7 +155,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-5">
                     <div class="d-flex justify-content-start aling-self-center">
                         <p class="text-center font-weight-bold m-2">USER ACCOUNT</p>
@@ -172,7 +162,6 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-between align-items-center mt-4">
-
                     <div class="col-xl-2 col-md-4 col-sm-6 mt-4">
                         <h5 class="user-bal text-center m-2">$<?= $wallet['walletMoney'] ?? '0.000001'  ?></h5>
                     </div>
@@ -211,9 +200,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <div class="typical-block_title">
@@ -236,10 +223,7 @@
                     <div class="col-md-6">
                         <div class="typical-block_title">
                             How to earn more
-
                             <div class="typical-block_main total-income">
-
-
                                 <div class="total-income_chart" style="text-align: -webkit-center;">
                                     <div class="total-income_chart__disable">
                                         <div class="total-income_chart__disable-ico text-center">
@@ -251,50 +235,45 @@
                                             Referral links </a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <?php foreach($videos as $value) :  ?>
-                            <div class="col-md-3">
-                                <div class="task-performer task-542413">
-                                    <div class="task-performer_cover">
-                                        <img src="https://i.ytimg.com/vi/<?= $value['videoId']  ?>/hqdefault.jpg" alt="img">
-                                        <a href="<?= base_url("{$locale}/video/view?vi={$value['ID']}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_play">
-                                            <i class="fas fa-play " style="color: white;"></i>
-                                        </a>
-                                    </div>
-                                    <div class="watch-video-info row d-flex justify-content-between px-3">
-                                        <div class="watch d-flex">
-                                            <i class="fab fa-youtube"></i>
-                                            <p>Watch video </p>
+                            <?php foreach ($videos as $value) :  ?>
+                                <div class="col-md-3">
+                                    <div class="task-performer task-542413">
+                                        <div class="task-performer_cover">
+                                            <img src="https://img.youtube.com/vi/<?= $value['videoId'] ?>/hqdefault.jpg" alt="img">
+                                            <a href="<?= base_url("{$locale}/video/view?vi={$value['ID']}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_play">
+                                                <i class="fas fa-play " style="color: white;"></i>
+                                            </a>
                                         </div>
-                                        <div class="time d-flex">
-                                            <i class="far fa-clock"></i>
-                                            <p>20&nbsp;sec. </p>
+                                        <div class="watch-video-info row d-flex justify-content-between px-3">
+                                            <div class="watch d-flex">
+                                                <i class="fab fa-youtube"></i>
+                                                <p>Watch video </p>
+                                            </div>
+                                            <div class="time d-flex">
+                                                <i class="far fa-clock"></i>
+                                                <p>20&nbsp;sec. </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="watch-video-price row d-flex justify-content-between mt-3 px-5">
-                                        <div class="task-performer_price">
-                                            +$&nbsp;0.000357 </div>
-                                        <a href="<?= base_url("{$locale}/video/view?vi={$value['ID']}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_btn">
-                                            Start </a>
+                                        <div class="watch-video-price row d-flex justify-content-between mt-3 px-5">
+                                            <div class="task-performer_price">
+                                                +$&nbsp;0.000357 </div>
+                                            <a href="<?= base_url("{$locale}/video/view?vi={$value['ID']}")  ?>" target="_blank" data-ajaxe="false" class="task-performer_btn">
+                                                Start </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             <?php endforeach  ?>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 </div>

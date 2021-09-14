@@ -5,6 +5,11 @@
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url('public')  ?>/assets/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- SweetAlert2 -->
+    <script src="<?= base_url('public')  ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="<?= base_url('public')  ?>/plugins/toastr/toastr.min.js"></script>
+
 
     <!-- Select2 -->
     <script src="<?= base_url('public')  ?>/plugins/select2/js/select2.full.min.js"></script>

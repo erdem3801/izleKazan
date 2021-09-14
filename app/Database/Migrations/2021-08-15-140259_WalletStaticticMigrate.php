@@ -18,8 +18,11 @@ class WalletStatisticMigrate extends Migration
 			],
 			'userId'          => [
 				'type'           => 'INT',
-				'constraint'     => 11,
-				'unique'		 => true
+				'constraint'     => 11, 
+			],
+			'videoId'          => [
+				'type'           => 'INT',
+				'constraint'     => 11, 
 			],
 			'moneyType' => [
 				'type' => 'CHAR',

@@ -1,136 +1,28 @@
 <?= $this->extend('template/layout') ?>
 
-<?= $this->section('js')  ?>
-
+<?= $this->section('jquery')  ?>
 <script>
-    $(function() {
+  
 
-        $('#duration').on('input', function() {
-            let radio = $(this).val()
-            let sec = Math.floor(radio * 5 % 60)
-            let min = Math.floor(radio * 5 / 60)
-            $('#durationLabel').text(`${min}  min. ${sec}  sec.`)
-        })
+ 
 
-        $('#duration').on('change', function() {
-            let radio = $(this).val()
-            let sec = Math.floor(radio * 5 % 60)
-            let min = Math.floor(radio * 5 / 60)
-            $('#durationLabel').text(min + ' min. ' + sec + ' sec.')
-        }).change()
-        $('#youtube').change(function() {
-            $('.moreDetailed-container').hide();
-            $('.advertiser_top__attention').fadeIn();
-        })
+  
 
-        $('#advertsVideo').change(function() {
-            $('.advertiser_top__attention').hide();
-            $('.moreDetailed-container').fadeIn();
-
-
-        })
-        //Initialize Select2 Elements
-        var $multiSelect = $('.select2').select2()
-        $multiSelect.on('select2:select', function(e) {
-
-            const {
-                id,
-                element
-            } = e.params.data
-
-            const dataSet = id.split(",")
-            if (dataSet.length > 1) {
-                $multiSelect.val(dataSet).trigger("change");
-            }
-
-
-        });
-        $('.clearMultiSelect').click(function() {
-            $multiSelect.val(null).trigger('change')
-        })
-
-    })
+   
 </script>
 <?= $this->endSection()  ?>
-
-<?= $this->section('css')  ?>
-<style>
-    .more-detailed {
-        padding: 30px;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .more-detailed i {
-        font-size: 60px;
-        color: red;
-        margin-bottom: 20px;
-    }
-
-    .dailyCoverage {
-        display: flex;
-        margin-left: 20px;
-    }
-
-    .btn-xs {
-        display: inline-block;
-        padding: 0.25em 0.4em;
-        font-size: 75%;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: baseline;
-        border-radius: 0.25rem;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-
-    .select2-results__option[aria-selected="true"]::after {
-        content: '(selected)';
-        margin-left: 20px;
-        color: #683cb8;
-
-    }
-
-    .back-button {
-        width: 130px;
-        border: 1px solid #e6eaef;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        padding: 9px 20px;
-        color: #424954;
-        cursor: pointer;
-        text-align: center;
-        transition: 0.3s;
-    }
-
-    .advertiser_top__attention {
-        padding: 10px 18px;
-        margin-top: 18px;
-        background: #FFF1E2;
-        border-radius: 6px;
-        width: 100%;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        align-items: center;
-    }
-</style>
-
-<?= $this->endSection()  ?>
-
 
 <?= $this->section('content') ?>
 
 
 <div class="container-fluid">
     <form method="post">
+
+        <div class="tariff-container">
+
+            <p class="cost-container">$ <input type="text" style="border: none;" id="cost" name="tariff" disabled value="1"></p>
+            <p>per 1000 view</p>
+        </div>
         <div class="card">
             <div class="card-header">
                 <h4>Create Video</h4>
@@ -150,7 +42,7 @@
                         </div>
                         <div class="col-md-9 col-sm-9">
                             <div class="form-group"><label>link to a Youtube <span class="text-danger">*</span></label>
-                                <input type="text" name="link" name="url" class="form-control" required placeholder="https://www.youtube.com/watch?v=xePLh9SRfgo">
+                                <input type="text" name="link" class="form-control" value="<?= $link ?? ''  ?>" required placeholder="https://www.youtube.com/watch?v=xePLh9SRfgo">
                             </div>
                             <div class="form-group"><label>Group</label>
                                 <select class="form-control" name="group" id="">
@@ -173,12 +65,12 @@
 
                                 <div class="form-group">
                                     <label>Text on the button</label>
-                                    <input type="text" class="form-control" name="buttonText" placeholder="More detailed">
+                                    <input type="text" class="form-control" name="buttonText" value="<?= $buttonText ?? ''  ?>" placeholder="More detailed">
                                 </div>
 
                                 <div class="form-group">
                                     <label>Link to website</label>
-                                    <input type="text" class="form-control" name="redirectUrl" placeholder="http://example.com">
+                                    <input type="text" class="form-control" name="redirectUrl" value="<?= $redirectUrl ?? ''  ?>" placeholder="http://example.com">
                                 </div>
                             </div>
                             <div class="advertiser_top__attention" style="display: none;">
@@ -194,7 +86,7 @@
                     </div>
                 </div>
 
-
+                <div id="player" style="display: none;"></div>
             </div>
         </div>
 
@@ -212,17 +104,17 @@
                     <div class="row align-items-center">
                         <div class="form-group d-flex">
                             <div class="form-check">
-                                <input type="radio" name="trafic" id="all" class="form-check-group" value="allSources" checked>
+                                <input type="radio" name="trafic" id="all" class="form-check-group" value="allSources" <?= isset($trafic) ? (($trafic == 'allSources') ? 'checked' : '') : 'checked' ?>>
                                 <label for="All Sources">All sources</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="radio" name="trafic" id="extension" class="form-check-group" value="extensions">
+                                <input type="radio" name="trafic" id="extension" class="form-check-group" value="extensions" <?= isset($trafic) ? (($trafic == 'extensions') ? 'checked' : '') : '' ?>>
                                 <label for="Extension">Extension</label>
                             </div>
 
                             <div class="form-check">
-                                <input type="radio" name="trafic" id="mobileApp" class="form-check-group" value="mobileApp">
+                                <input type="radio" name="trafic" id="mobileApp" class="form-check-group" value="mobileApp" <?= isset($trafic) ? (($trafic == 'mobileApp') ? 'checked' : '') : '' ?>>
                                 <label for="Mobile App">Mobile app</label>
                             </div>
                         </div>
@@ -242,19 +134,19 @@
 
                             <div class="form-group">
                                 <label for="duration">Druration of view : <span class="text-info"><i class="far fa-clock"></i></span> <span class="text-info" id="durationLabel"></span></label>
-                                <input type="range" value="4" min='4' max='120' name="duration" class="custom-range" id="duration">
+                                <input type="range" value="<?= $duration ?? '4'  ?>" min='4' max='120' name="duration" class="custom-range" id="duration">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" name="isShowAfterClick" class="custom-control-input" id="showAfter">
+                                <input type="checkbox" name="isShowAfterClick" class="custom-control-input" id="showAfter" <?= isset($isShowAfterClick) ? 'checked' : ''  ?>>
                                 <label class="custom-control-label" for="showAfter">Do not show after click(+ $0.1)</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" name="isOnlyHQuser" class="custom-control-input" id="onlyHQuser">
+                                <input type="checkbox" name="isOnlyHQuser" class="custom-control-input" id="onlyHQuser" <?= isset($isOnlyHQuser) ? 'checked' : ''  ?>>
                                 <label class="custom-control-label" for="onlyHQuser">Only high-quality users(+ $0.1)</label>
                             </div>
                         </div>
@@ -507,32 +399,32 @@
                             <div class="form-group mt-3">
                                 <label for="viewPerPerson">The number of view per person is not more than (+ $0.1)</label>
                                 <select class="form-control" name="viewPerPerson" id="viewPerPerson">
-                                    <option value="0" selected>No limits</option>
-                                    <option value="1">1 views</option>
-                                    <option value="2">2 views</option>
-                                    <option value="3">3 views</option>
-                                    <option value="4">4 views</option>
-                                    <option value="5">5 views</option>
+                                    <option value="0" <?= isset($viewPerPerson) ? (($viewPerPerson == 0) ? 'selected' : '') : 'selected'  ?>>No limits </option>
+                                    <option value="1" <?= isset($viewPerPerson) ? (($viewPerPerson == 1) ? 'selected' : '') : ''          ?>>1 views </option>
+                                    <option value="2" <?= isset($viewPerPerson) ? (($viewPerPerson == 2) ? 'selected' : '') : ''          ?>>2 views </option>
+                                    <option value="3" <?= isset($viewPerPerson) ? (($viewPerPerson == 3) ? 'selected' : '') : ''          ?>>3 views </option>
+                                    <option value="4" <?= isset($viewPerPerson) ? (($viewPerPerson == 4) ? 'selected' : '') : ''          ?>>4 views </option>
+                                    <option value="5" <?= isset($viewPerPerson) ? (($viewPerPerson == 5) ? 'selected' : '') : ''          ?>>5 views </option>
                                 </select>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="viewPerHour">Numbers of views per hour (+ $0.1)</label>
                                 <select class="form-control" name="viewPerHour" id="viewPerHour">
-                                    <option value="0" selected>No limits</option>
-                                    <option value="500">500 views per hour</option>
-                                    <option value="200">200 views per hour</option>
-                                    <option value="100">100 views per hour</option>
-                                    <option value="60">60 views per hour</option>
-                                    <option value="30">30 views per hour</option>
-                                    <option value="10">10 views per hour</option>
+                                    <option value="0" <?= isset($viewPerHour) ? (($viewPerHour == 0) ? 'selected' : '') : 'selected'  ?>>No limits </option>
+                                    <option value="500" <?= isset($viewPerHour) ? (($viewPerHour == 500) ? 'selected' : '') : ''          ?>>500 views per hour </option>
+                                    <option value="200" <?= isset($viewPerHour) ? (($viewPerHour == 200) ? 'selected' : '') : ''          ?>>200 views per hour </option>
+                                    <option value="100" <?= isset($viewPerHour) ? (($viewPerHour == 100) ? 'selected' : '') : ''          ?>>100 views per hour </option>
+                                    <option value="60" <?= isset($viewPerHour) ? (($viewPerHour == 60) ? 'selected' : '') : ''          ?>>60 views per hour </option>
+                                    <option value="30" <?= isset($viewPerHour) ? (($viewPerHour == 30) ? 'selected' : '') : ''          ?>>30 views per hour </option>
+                                    <option value="10" <?= isset($viewPerHour) ? (($viewPerHour == 10) ? 'selected' : '') : ''          ?>>10 views per hour </option>
                                 </select>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="language">Language</label>
-                                <select class="form-control" name="language" id="viewPerHour">
-                                    <option value="0" selected>All languages</option>
-                                    <option value="500">English</option>
-                                    <option value="200">Turkish</option>
+                                <select class="form-control" name="language">
+                                    <option value="all" <?= isset($language) ? (($language == 'all') ? 'selected' : '') : 'selected'  ?>>All languages </option>
+                                    <option value="en" <?= isset($language) ? (($language == 'en') ? 'selected' : '') : ''          ?>>English </option>
+                                    <option value="tr" <?= isset($language) ? (($language == 'tr') ? 'selected' : '') : ''          ?>>Turkish </option>
                                 </select>
                             </div>
                         </div>
@@ -561,5 +453,4 @@
         </div>
     </form>
 </div>
-
 <?= $this->endSection() ?>

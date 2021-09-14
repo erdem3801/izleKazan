@@ -36,7 +36,7 @@ $routes->get('/', 'controlCenterController::controlCenter', ['filter' => 'Auth']
 
 $routes->get('addAdverts', 'addAdvertsController::addAdverts');
 
-$routes->group('api', function ($routes) {
+$routes->group('api',['filter' => 'ApiFilter'], function ($routes) {
 	$routes->match(['get', 'post'], '(:segment)', 'api::$1');
 	$routes->match(['get', 'post'], '(:segment)/(:any)', 'api::$1/$2');
 });

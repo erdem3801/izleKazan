@@ -43,7 +43,7 @@
                                     <form method="POST" class="user">
                                         <small><?= session()->getFlashdata('error');  ?></small>
                                         <div class="form-group">
-                                            <input type="email" name="eMail" class="form-control form-control-user" placeholder="eMail">
+                                            <input type="email" name="eMail" class="form-control form-control-user" placeholder="eMail Or Username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
@@ -51,8 +51,7 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                                <label class="custom-control-label" for="customCheck">Remember Me</label>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
@@ -66,10 +65,14 @@
                                             </a>
                                         <?php endif;  ?>
 
-                                  
-                                        <button scope="public_profile,email" onlogin="checkLoginState();" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </button>
+                                        <?php if (isset($googleHref)) :  ?>
+                                            <a href="<?= $googleHref  ?>" class="btn btn-facebook btn-user btn-block">
+                                                <i class="fab fa-facebook fa-fw"></i> Login with Facebook
+                                            </a>
+                                        <?php endif;  ?>
+                                        <!-- <button scope="public_profile,email" onlogin="checkLoginState();" class="btn btn-facebook btn-user btn-block">
+                                            <i class="fab fa-facebook-f fa-fw"></i> Login Facebookwith 
+                                        </button> -->
                                     </form>
                                     <hr>
                                     <div class="text-center">

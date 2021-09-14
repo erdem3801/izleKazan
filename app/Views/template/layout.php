@@ -13,11 +13,13 @@
 
     <?= $this->include('template/css')  ?>
     <?= $this->renderSection('css') ?>
+    <script>
+        const base_url = "<?= base_url() ?>"
+    </script>
 
-    
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -43,7 +45,7 @@
 
             <!-- Footer -->
             <?= $this->include('template/footer')  ?>
-        
+
             <!-- End of Footer -->
 
         </div>
@@ -78,8 +80,20 @@
     </div>
 
     <?= $this->include('template/js')  ?>
-    <?= $this->renderSection('js') ?>
+    <?= $this->renderSection('jquery')  ?>
+    <?php if (session()->getFlashData('SwalMessage')) : ?>
+        <script>
+            $(function() {
+                Swal.fire({
+                    icon: '<?= session()->getFlashData('SwalIcon') ?>',
+                    title: '<?= session()->getFlashData('SwalMessage') ?>',
+                    showConfirmButton: false,
+                    timer: 1500
 
+                })
+            })
+        </script>
+    <?php endif  ?>
 
 </body>
 

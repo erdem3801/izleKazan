@@ -1,83 +1,4 @@
 <?= $this->extend('template/layout') ?>
-<?= $this->section('js') ?>
-<script>
-    $(function() {
-        $('.card').hover(function() {
-            const id = $(this).attr('data-id')
-           
-            $(`#container-${id}`).show();
-        }, function() {
-            const id = $(this).attr('data-id')
-            $(`#container-${id}`).hide();
-        })
-    })
-</script>
-<?= $this->endSection() ?>
-
-
-<?= $this->section('css') ?>
-<style>
-    .task_id {
-        font-size: 9px;
-        line-height: 12px;
-        letter-spacing: 0.3px;
-        color: #ABB2BD;
-        margin-bottom: 1px;
-    }
-
-    .task_name {
-        font-size: 14px;
-        line-height: 19px;
-        margin-bottom: 4px;
-        color: #3F8EFA;
-        cursor: text;
-    }
-
-    .task_type__ico {
-        width: 16px;
-        height: 16px;
-        align-items: center;
-        justify-content: center;
-        margin-right: 5px;
-    }
-
-    .task_statistics__info>span:nth-child(1) {
-        font-size: 16px;
-        line-height: 22px;
-        color: #3D3D3D;
-    }
-
-    .task_statistics__info>span:nth-child(2) {
-        font-size: 11px;
-        line-height: 15px;
-        color: #424954;
-    }
-
-    .task-statistics {
-        border-right: 2px solid #0000002b;
-        padding-right: 7px;
-    }
-
-    .task_statistics__info .typical-select_info {
-        display: inline-block;
-        height: 12px;
-        width: 10px;
-        background: url(/static/flatonica/img/info-circle-xs.svg) no-repeat;
-        vertical-align: middle;
-    }
-
-    .typical-select_info {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: flex;
-        cursor: pointer;
-        margin-left: 3px;
-    }
-</style>
-<?= $this->endSection() ?>
-
 
 <?= $this->section('content') ?>
 <!-- Begin Page Content -->
@@ -100,12 +21,12 @@
         </div>
         <!-- Card Body -->
         <div class="card-body">
-            <?php   foreach ($myAds as $value) :  ?>
-                <div class="card collapsed-card" data-id="<?= $value['ID']  ?>">
+            <?php foreach ($myAds as $key => $value) :  ?>
+                <div class="card collapsed-card" data-videoId="<?= $value['ID']  ?>">
                     <div class="card-header d-flex align-middle align-items-center">
 
                         <div class="card-title d-flex align-middle align-items-center">
-                            <input type="checkbox">
+                            <input class="videoCheckbox" type="checkbox" data-id="<?= $value['ID']  ?>">
                             <img class="mx-3" src="https://i.ytimg.com/vi/<?= $value['videoId']  ?>/hqdefault.jpg" alt="" height="100" width="100" style="border-radius: 20px;">
                             <div class="mx-4">
                                 <p class="task_id"><?= $value['ID']  ?></p>
@@ -132,11 +53,11 @@
                                     <span data-original-title="Guaranteed viewing time" data-toggle="tooltip">
                                         Duration </span>
                                     <span class="params-cpm_min-545353">
-                                          <?php 
-                                          $sec = $value['duration'] % 60;
-                                          $min = floor($value['duration'] / 60) ;
-                                          echo $min .':' . $sec;
-                                          ?>    
+                                        <?php
+                                        $sec = $value['duration'] % 60;
+                                        $min = floor($value['duration'] / 60);
+                                        echo $min . ':' . $sec;
+                                        ?>
                                     </span>
                                 </div>
 
@@ -145,7 +66,7 @@
                                         Link to website </span>
                                     <span class="params-link-545353">
                                         <a href="<?= $value['redirectUrl']  ?>" target="_blank" title="<?= $value['redirectUrl']  ?>">
-                                        <?= $value['redirectUrl']  ?> </a>
+                                            <?= $value['redirectUrl']  ?> </a>
                                     </span>
                                 </div>
 
@@ -181,8 +102,7 @@
                                 <div class="task-statistics mx-3 d-flex justify-content-between">
                                     <div class="task_statistics__info d-flex flex-column">
                                         <span> 0 </span>
-                                        <span>
-                                            Views </span>
+                                        <span>Views </span>
                                     </div>
                                     <div class="task_statistics__ico ml-4">
                                         <i class="fas fa-eye"></i>
@@ -192,8 +112,7 @@
                                 <div class="task-statistics mx-3 d-flex justify-content-between">
                                     <div class="task_statistics__info d-flex flex-column">
                                         <span> 0 </span>
-                                        <span>
-                                            Clicks </span>
+                                        <span>Clicks </span>
                                     </div>
                                     <div class="task_statistics__ico ml-4">
                                         <i class="fas fa-external-link-alt"></i>
@@ -204,7 +123,10 @@
                                     <div class="task_statistics__info d-flex flex-column">
                                         <span> 0 </span>
                                         <span>
-                                            Reach <div class="typical-select_info" data-original-title="The number of unique users who viewes this ad" data-toggle="tooltip"></div>
+                                            Reach 
+                                            <div class="typical-select_info" data-original-title="The number of unique users who viewes this ad" data-toggle="tooltip">
+                                                
+                                            </div>
                                         </span>
                                     </div>
                                     <div class="task_statistics__ico ml-4">
@@ -266,34 +188,34 @@
                                 <a class="nav-link d-flex align-items-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="d-flex flex-column p-3 text-center">
                                         <span>View per person</span>
-                                        <span><?=  $value['viewPerPerson'] ?> View</span>
+                                        <span><span id="viewPerPersonItem"><?= $value['viewPerPerson'] ?></span> View</span>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right animated--fade-in" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">No limits</a>
-                                    <a class="dropdown-item" href="#">1 view</a>
-                                    <a class="dropdown-item" href="#">2 view</a>
-                                    <a class="dropdown-item" href="#">3 view</a>
-                                    <a class="dropdown-item" href="#">4 view</a>
-                                    <a class="dropdown-item" href="#">5 view</a>
+                                    <a class="dropdown-item" data-area="viewPerPersonItem" data-value="0" data-videoId="<?= $value['ID']  ?>" href="#">No limits</a>
+                                    <a class="dropdown-item" data-area="viewPerPersonItem" data-value="1" data-videoId="<?= $value['ID']  ?>" href="#">1 view</a>
+                                    <a class="dropdown-item" data-area="viewPerPersonItem" data-value="2" data-videoId="<?= $value['ID']  ?>" href="#">2 view</a>
+                                    <a class="dropdown-item" data-area="viewPerPersonItem" data-value="3" data-videoId="<?= $value['ID']  ?>" href="#">3 view</a>
+                                    <a class="dropdown-item" data-area="viewPerPersonItem" data-value="4" data-videoId="<?= $value['ID']  ?>" href="#">4 view</a>
+                                    <a class="dropdown-item" data-area="viewPerPersonItem" data-value="5" data-videoId="<?= $value['ID']  ?>" href="#">5 view</a>
                                 </div>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link d-flex align-items-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="d-flex flex-column p-3 text-center">
-                                        <span>View per hout</span>
-                                        <span><?= $value['viewPerHour']  ?> view per hour</span>
+                                        <span>View per hour</span>
+                                        <span><span id="viewPerHourItem"><?= $value['viewPerHour']  ?></span> view per hour</span>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right animated--fade-in" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">No limits</a>
-                                    <a class="dropdown-item" href="#">500 views per hour</a>
-                                    <a class="dropdown-item" href="#">200 views per hour</a>
-                                    <a class="dropdown-item" href="#">100 views per hour</a>
-                                    <a class="dropdown-item" href="#">60 views per hour</a>
-                                    <a class="dropdown-item" href="#">30 views per hour</a>
-                                    <a class="dropdown-item" href="#">10 views per hour</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="0"   data-videoId="<?= $value['ID']  ?>" href="#">No limits</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="500" data-videoId="<?= $value['ID']  ?>" href="#">500 views per hour</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="200" data-videoId="<?= $value['ID']  ?>" href="#">200 views per hour</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="100" data-videoId="<?= $value['ID']  ?>" href="#">100 views per hour</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="60"  data-videoId="<?= $value['ID']  ?>" href="#">60 views per hour</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="30"  data-videoId="<?= $value['ID']  ?>" href="#">30 views per hour</a>
+                                    <a class="dropdown-item" data-area="viewPerHourItem" data-value="10"  data-videoId="<?= $value['ID']  ?>" href="#">10 views per hour</a>
                                 </div>
                             </li>
 
@@ -301,13 +223,13 @@
                                 <a class="nav-link d-flex align-items-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="d-flex flex-column p-3 text-center">
                                         <span>Sources</span>
-                                        <span><?= $value['trafic']  ?></span>
+                                        <span id="sourcesItem"><?= $value['trafic']  ?></span>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right animated--fade-in" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">All sources</a>
-                                    <a class="dropdown-item" href="#">Extension</a>
-                                    <a class="dropdown-item" href="#">Mobile App</a>
+                                    <a class="dropdown-item" data-area="sourcesItem" data-value="All sources" data-videoId="<?= $value['ID']  ?>" href="#">All sources</a>
+                                    <a class="dropdown-item" data-area="sourcesItem" data-value="Extension"   data-videoId="<?= $value['ID']  ?>" href="#">Extension</a>
+                                    <a class="dropdown-item" data-area="sourcesItem" data-value="Mobile App"  data-videoId="<?= $value['ID']  ?>" href="#">Mobile App</a>
                                 </div>
                             </li>
 
@@ -327,12 +249,13 @@
                                 <a class="nav-link d-flex align-items-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="d-flex flex-column p-3 text-center">
                                         <span>Language</span>
-                                        <span>All</span>
+                                        <span id="languageItem"><?= $value['language']  ?></span>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right animated--fade-in" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">English</a>
-                                    <a class="dropdown-item" href="#">Türkçe</a>
+                                    <a class="dropdown-item" data-area="languageItem" data-value="All" href="#">All</a>
+                                    <a class="dropdown-item" data-area="languageItem" data-value="English" href="#">English</a>
+                                    <a class="dropdown-item" data-area="languageItem" data-value="Türkçe" href="#">Türkçe</a>
                                 </div>
                             </li>
 
@@ -343,6 +266,9 @@
                 </div>
             <?php endforeach  ?>
 
+            <?php if (sizeof($myAds) !== 0) :  ?>
+                <button id="delete" class="btn btn-block btn-outline-danger">Delete Selected Ads</button>
+            <?php endif  ?>
         </div>
     </div>
 

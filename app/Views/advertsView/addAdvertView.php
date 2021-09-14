@@ -54,11 +54,22 @@
                             <span class="info-box-icon"><i class="fab fa-youtube" style="font-size: 5rem;"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Video advert</span>
-                                <span class="info-box-number">Specify a link to the video in Youtube and a link to the site to go. Our users will watch your video and then be redirected to your site.</span>
+                                <span class="info-box-text">POPUP</span>
+                                <span class="info-box-number">
+                                    People going be transferred to the site with a guaranteed time of stay on the page. Live traffic source is the browser extension and the mobile application.
+                                </span>
                                 <span class="progress-description mt-5">
-                                    <p>Potential reach: 1 350 135</p>
-                                    <p>Price from: $1.00 per 1000 views</p>
+                                    <ul class="advertising_item__list">
+                                        <li>
+                                            <span>
+                                                Daily reach:
+                                            </span>
+                                            33 227
+                                        </li>
+                                        <li>
+                                            Price from: <span>$1.00</span> per 1000 visits
+                                        </li>
+                                    </ul>
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -84,11 +95,36 @@
                             <span class="info-box-icon"><i class="fas fa-file-alt" style="font-size: 5rem;"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Video advert</span>
-                                <span class="info-box-number">Specify a link to the video in Youtube and a link to the site to go. Our users will watch your video and then be redirected to your site.</span>
+                                <span class="info-box-text">Multi size advert</span>
+                                <span class="info-box-number">
+                                    Specify a title, description, and upload any image. The system will generate banners of different sizes, which will be shown in the Surfe.pro advertising network, as well as to users who have installed the browser extension.
+
+                                </span>
                                 <span class="progress-description mt-5">
-                                    <p>Potential reach: 1 350 135</p>
-                                    <p>Price from: $1.00 per 1000 views</p>
+                                    <ul class="advertising_item__list">
+                                        <li>
+                                            <span>
+                                                Sizes:
+                                            </span>
+                                            468x60, 728x90, 240x400, 300x250 and other
+                                        </li>
+                                        <li>
+                                            <span>
+                                                Daily reach:
+                                            </span>
+                                            800 908
+                                        </li>
+                                        <li>
+                                            Price from:
+                                            <span>
+                                                $0.04
+                                            </span>
+                                            per 1000 impressions or
+                                            <span>
+                                                $0.02 per click
+                                            </span>
+                                        </li>
+                                    </ul>
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -99,10 +135,34 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Banner advert</span>
-                                <span class="info-box-number">Specify a link to the video in Youtube and a link to the site to go. Our users will watch your video and then be redirected to your site.</span>
+                                <span class="info-box-number">
+                                    Upload graphic banners in standard sizes. They will be shown in the Surfe.pro advertising network, as well as to users who have installed the browser extension.
+                                </span>
                                 <span class="progress-description mt-5">
-                                    <p>Potential reach: 1 350 135</p>
-                                    <p>Price from: $1.00 per 1000 views</p>
+                                    <ul class="advertising_item__list">
+                                        <li>
+                                            <span>
+                                                Sizes:
+                                            </span>
+                                            468x60, 728x90, 240x400, 300x250
+                                        </li>
+                                        <li>
+                                            <span>
+                                                Daily reach:
+                                            </span>
+                                            800 378
+                                        </li>
+                                        <li>
+                                            Price from:
+                                            <span>
+                                                $0.04
+                                            </span>
+                                            per 1000 impressions or
+                                            <span>
+                                                $0.02 per click
+                                            </span>
+                                        </li>
+                                    </ul>
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
